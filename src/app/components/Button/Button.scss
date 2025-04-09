@@ -1,0 +1,8 @@
+@use "../../assets/style/Colors.scss" as colors;
+
+.button {
+  padding: 16px 24px;
+  border-radius: 8px;
+  background-color: colors.$yellow-color;
+  color: black;
+}

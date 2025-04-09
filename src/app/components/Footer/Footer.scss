@@ -1,0 +1,15 @@
+@use "../../assets/style/Colors.scss" as colors;
+
+.footer {
+  padding: 24px 104px;
+  background-color: colors.$orange-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__navigation-part {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+  }
+}
