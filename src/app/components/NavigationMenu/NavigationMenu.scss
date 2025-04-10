@@ -4,5 +4,13 @@
   &__list {
     display: flex;
     gap: 40px;
+    list-style-type: none;
+
+    &__item {
+      &__link {
+        text-decoration: none;
+        color: black;
+      }
+    }
   }
 }

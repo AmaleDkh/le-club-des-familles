@@ -1,0 +1,21 @@
+@import "./Fonts.scss";
+
+:root {
+  --font-gagalin: "Gagalin", sans-serif;
+  --font-dreaming: "Dreaming Outloud", sans-serif;
+  --font-lato: "Lato", sans-serif;
+}
+
+* {
+  font-family: var(--font-lato);
+  font-weight: 300;
+}
+
+h1,
+h2 {
+  font-family: var(--font-gagalin);
+}
+
+h3 {
+  font-family: var(--font-dreaming);
+}
