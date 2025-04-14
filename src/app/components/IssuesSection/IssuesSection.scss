@@ -1,0 +1,10 @@
+.issues-section {
+  margin: 64px 104px;
+  text-align: center;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    gap: 80px;
+  }
+}

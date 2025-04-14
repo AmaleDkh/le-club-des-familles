@@ -1,0 +1,19 @@
+.image-and-text-section {
+  margin: 64px 104px;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    &__texts {
+      &__paragraph {
+        margin: 0 0 40px 0;
+      }
+    }
+  }
+}

@@ -15,6 +15,17 @@ type HomepageContent = {
   scouts_words: string;
   instagram_followers_number: string;
   instagram_followers_words: string;
+  issues_title: string;
+  first_issue_title: string;
+  first_issue_text: string;
+  second_issue_title: string;
+  second_issue_text: string;
+  third_issue_title: string;
+  third_issue_text: string;
+  issues_paragraph: string;
+  concept_title: string;
+  concept_image: string;
+  concept_text: string;
 };
 
 type Logo = {
