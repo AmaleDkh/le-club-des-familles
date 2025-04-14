@@ -1,0 +1,27 @@
+@use "../../assets/style/Colors.scss" as colors;
+
+.three-key-figures {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 64px 104px;
+  background-color: colors.$orange-color;
+
+  &__block {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__number {
+      font-family: var(--font-gagalin);
+      font-size: 72px;
+    }
+
+    &__text {
+      text-align: center;
+      margin-top: 24px;
+      font-family: var(--font-dreaming);
+    }
+  }
+}
