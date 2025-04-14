@@ -26,6 +26,19 @@ type HomepageContent = {
   concept_title: string;
   concept_image: string;
   concept_text: string;
+  badges_title: string;
+  first_badge_image: string;
+  first_badge_title: string;
+  first_badge_paragraph: string;
+  second_badge_image: string;
+  second_badge_title: string;
+  second_badge_paragraph: string;
+  third_badge_image: string;
+  third_badge_title: string;
+  third_badge_paragraph: string;
+  fourth_badge_image: string;
+  fourth_badge_title: string;
+  fourth_badge_paragraph: string;
 };
 
 type Logo = {

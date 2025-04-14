@@ -1,0 +1,30 @@
+@use "../../assets/style/Colors.scss" as colors;
+
+.badges-section {
+  background-color: colors.$orange-color;
+  color: white;
+  padding: 64px 104px;
+
+  &__title {
+    text-align: center;
+    color: white;
+  }
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+      text-align: center;
+
+      &__image {
+        border-radius: 50%;
+      }
+
+      &__title {
+        color: white;
+      }
+    }
+  }
+}
