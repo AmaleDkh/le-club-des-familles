@@ -8,11 +8,12 @@ import "./Button.scss";
 type ButtonProps = {
   text: string;
   link: string;
+  marginAutoVersion: string;
 };
 
-function Button({ text, link }: ButtonProps) {
+function Button({ text, link, marginAutoVersion }: ButtonProps) {
   return (
-    <Link href={link} className="button">
+    <Link href={link} className={`button ${marginAutoVersion}`}>
       {text}
     </Link>
   );

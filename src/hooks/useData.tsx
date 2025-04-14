@@ -39,6 +39,7 @@ type HomepageContent = {
   fourth_badge_image: string;
   fourth_badge_title: string;
   fourth_badge_paragraph: string;
+  favorite_locations_title: string;
 };
 
 type Logo = {
@@ -78,7 +79,6 @@ export const useLogoData = () => {
     const fetchData = async () => {
       try {
         const LogoContentData = await fetchLogo();
-        console.log(LogoContentData);
 
         const logo = LogoContentData.map(
           (LogoContent: { acf: Logo }) => LogoContent.acf

@@ -7,4 +7,10 @@
   color: black;
   text-decoration: none;
   font-family: var(--font-dreaming);
+
+  &__with-margin-auto {
+    margin: auto;
+    display: flex;
+    width: fit-content;
+  }
 }

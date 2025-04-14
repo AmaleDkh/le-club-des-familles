@@ -26,7 +26,7 @@ function Header() {
       )}
       <div className="header__navigation-part">
         <NavigationMenu />
-        <Button text="LOREM IPSUM" link="" />
+        <Button text="LOREM IPSUM" link="" marginAutoVersion="" />
       </div>
     </header>
   );

@@ -41,7 +41,11 @@ function ImageAndTextSection({
             dangerouslySetInnerHTML={{ __html: paragraph }}
           />
           {buttonVersion === true && (
-            <Button text="Découvrez tous les lieux family-friendly" link="" />
+            <Button
+              text="Découvrez tous les lieux family-friendly"
+              link=""
+              marginAutoVersion=""
+            />
           )}
         </div>
       </div>

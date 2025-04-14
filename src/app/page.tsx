@@ -7,6 +7,7 @@ import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
 import IssuesSection from "./components/IssuesSection/IssuesSection";
 import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
 import BadgesSection from "./components/BadgesSection/BadgesSection";
+import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
 
 // Hook
 import { useHomepageData } from "@/hooks/useData";
@@ -60,6 +61,13 @@ export default function Home() {
             fourthBadgeImage={homepageContent[0].fourth_badge_image}
             fourthBadgeTitle={homepageContent[0].fourth_badge_title}
             fourthBadgeParagraph={homepageContent[0].fourth_badge_paragraph}
+          />
+        )}
+
+        {homepageContent?.[0] && (
+          <FavoriteLocations
+            title={homepageContent[0].favorite_locations_title}
+            buttonVersion={true}
           />
         )}
       </Layout>
