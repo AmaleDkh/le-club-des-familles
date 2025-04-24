@@ -1,11 +1,40 @@
-// Next element
+// React & Next elements
 import Image from "next/image";
+import { MapPin } from "lucide-react";
 
-// Component
+// Components
+import SectionTitle from "../SectionTitle/SectionTitle";
 import Button from "../Button/Button";
 
 // Style
 import "./FavoriteLocations.scss";
+
+const recommended = [
+  {
+    nom: "LIEU 1",
+    adresse: "ADRESSE 1",
+    image: "",
+    type: "Parc",
+  },
+  {
+    nom: "LIEU 2",
+    adresse: "ADRESSE 2",
+    image: "",
+    type: "Loisir",
+  },
+  {
+    nom: "LIEU 3",
+    adresse: "ADRESSE 3",
+    image: "",
+    type: "Café",
+  },
+  {
+    nom: "LIEU 4",
+    adresse: "ADRESSE 4",
+    image: "",
+    type: "Ferme",
+  },
+];
 
 interface FavoriteLocationsSectionProps {
   title: string;
@@ -17,79 +46,40 @@ function FavoriteLocations({
   buttonVersion,
 }: FavoriteLocationsSectionProps) {
   return (
-    <section className="favorite-locations">
-      <h2 className="favorite-locations__title">{title}</h2>
-      <ul className="favorite-locations__list">
-        <li className="favorite-locations__list__item">
-          <Image
-            className="favorite-locations__list__item__image"
-            src=""
-            alt=""
-            width={600}
-            height={600}
-          />
-          <div className="favorite-locations__list__item__texts">
-            <h3 className="favorite-locations__list__item__texts__title">
-              NOM DU LIEU - LOCALISATION
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    <section className="recommended container">
+      <SectionTitle
+        title={title}
+        colorVersion=""
+        versionWithTextAlign="section-title--version-with-text-align"
+      />
+      <div className="recommended__grid">
+        {recommended.map((place) => (
+          <div key={place.nom} className="recommended__card group">
+            <Image
+              className="recommended__image group-hover:scale-105"
+              src={place.image}
+              alt="Alt"
+              width={200}
+              height={200}
+            />
+            <div className="recommended__content">
+              <h3 className="recommended__name">{place.nom}</h3>
+              <div className="recommended__location">
+                <MapPin className="recommended__location-icon" />
+                <span>{place.adresse}</span>
+              </div>
+              <span className="recommended__tag">{place.type}</span>
+            </div>
           </div>
-        </li>
-
-        <li className="favorite-locations__list__item">
-          <Image
-            className="favorite-locations__list__item__image"
-            src=""
-            alt=""
-            width={600}
-            height={600}
-          />
-          <div className="favorite-locations__list__item__texts">
-            <h3 className="favorite-locations__list__item__texts__title">
-              NOM DU LIEU - LOCALISATION
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-          </div>
-        </li>
-
-        <li className="favorite-locations__list__item">
-          <Image
-            className="favorite-locations__list__item__image"
-            src=""
-            alt=""
-            width={600}
-            height={600}
-          />
-          <div className="favorite-locations__list__item__texts">
-            <h3 className="favorite-locations__list__item__texts__title">
-              NOM DU LIEU - LOCALISATION
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-          </div>
-        </li>
-
-        <li className="favorite-locations__list__item">
-          <Image
-            className="favorite-locations__list__item__image"
-            src=""
-            alt=""
-            width={600}
-            height={600}
-          />
-          <div className="favorite-locations__list__item__texts">
-            <h3 className="favorite-locations__list__item__texts__title">
-              NOM DU LIEU - LOCALISATION
-            </h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-          </div>
-        </li>
-      </ul>
+        ))}
+      </div>
 
       {buttonVersion === true && (
         <Button
-          text="Découvrez tous les lieux family-friendly"
-          link=""
-          marginAutoVersion="button__with-margin-auto"
+          text="@LECLUBDESFAMILLES"
+          link="/contact"
+          marginAutoVersion="button--center-version"
+          marginTopVersion="button--margin-top-version"
         />
       )}
     </section>

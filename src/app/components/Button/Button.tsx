@@ -9,11 +9,20 @@ type ButtonProps = {
   text: string;
   link: string;
   marginAutoVersion: string;
+  marginTopVersion: string;
 };
 
-function Button({ text, link, marginAutoVersion }: ButtonProps) {
+function Button({
+  text,
+  link,
+  marginAutoVersion,
+  marginTopVersion,
+}: ButtonProps) {
   return (
-    <Link href={link} className={`button ${marginAutoVersion}`}>
+    <Link
+      href={link}
+      className={`button ${marginAutoVersion} ${marginTopVersion}`}
+    >
       {text}
     </Link>
   );

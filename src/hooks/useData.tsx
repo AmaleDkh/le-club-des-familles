@@ -40,6 +40,13 @@ type HomepageContent = {
   fourth_badge_title: string;
   fourth_badge_paragraph: string;
   favorite_locations_title: string;
+  join_the_club_title: string;
+  join_the_club_digger_image: string;
+  join_the_club_digger_title: string;
+  join_the_club_digger_text: string;
+  join_the_club_partner_image: string;
+  join_the_club_partner_title: string;
+  join_the_club_partner_text: string;
 };
 
 type Logo = {

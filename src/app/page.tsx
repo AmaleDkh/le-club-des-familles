@@ -2,12 +2,13 @@
 
 // Components
 import Layout from "./components/Layout/Layout";
-import Banner from "./components/Banner/Banner";
-import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
-import IssuesSection from "./components/IssuesSection/IssuesSection";
-import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
+// import Banner from "./components/Banner/Banner";
+// import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
+// import IssuesSection from "./components/IssuesSection/IssuesSection";
+// import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
 import BadgesSection from "./components/BadgesSection/BadgesSection";
 import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
+import JoinTheClub from "./components/JoinTheClub/JoinTheClub";
 
 // Hook
 import { useHomepageData } from "@/hooks/useData";
@@ -18,15 +19,15 @@ export default function Home() {
   return (
     <>
       <Layout>
-        {homepageContent?.[0] && (
+        {/* {homepageContent?.[0] && (
           <Banner photo={homepageContent[0].banner_photo} />
-        )}
+        )} */}
 
-        <ThreeKeyFigures />
+        {/* <ThreeKeyFigures /> */}
 
         {homepageContent?.[0] && (
           <>
-            <IssuesSection
+            {/* <IssuesSection
               title={homepageContent[0].issues_title}
               firstIssueTitle={homepageContent[0].first_issue_title}
               firstIssueText={homepageContent[0].first_issue_text}
@@ -43,7 +44,7 @@ export default function Home() {
               paragraph={homepageContent[0].concept_text}
               marginVersion=""
               buttonVersion={true}
-            />
+            /> */}
 
             <BadgesSection
               title={homepageContent[0].badges_title}
@@ -64,6 +65,16 @@ export default function Home() {
             <FavoriteLocations
               title={homepageContent[0].favorite_locations_title}
               buttonVersion={true}
+            />
+
+            <JoinTheClub
+              title={homepageContent[0].join_the_club_title}
+              diggerImage={homepageContent[0].join_the_club_digger_image}
+              diggerTitle={homepageContent[0].join_the_club_digger_title}
+              diggerText={homepageContent[0].join_the_club_digger_text}
+              partnerImage={homepageContent[0].join_the_club_partner_image}
+              partnerTitle={homepageContent[0].join_the_club_partner_title}
+              partnerText={homepageContent[0].join_the_club_partner_text}
             />
           </>
         )}

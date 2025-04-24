@@ -1,6 +1,9 @@
 // Next element
 import Image from "next/image";
 
+// Component
+import SectionTitle from "../SectionTitle/SectionTitle";
+
 // Style
 import "./BadgesSection.scss";
 
@@ -35,67 +38,56 @@ function BadgesSection({
   fourthBadgeTitle,
   fourthBadgeParagraph,
 }: BadgesSectionProps) {
+  const badges = [
+    {
+      image: firstBadgeImage,
+      title: firstBadgeTitle,
+      description: firstBadgeParagraph,
+    },
+    {
+      image: secondBadgeImage,
+      title: secondBadgeTitle,
+      description: secondBadgeParagraph,
+    },
+    {
+      image: thirdBadgeImage,
+      title: thirdBadgeTitle,
+      description: thirdBadgeParagraph,
+    },
+    {
+      image: fourthBadgeImage,
+      title: fourthBadgeTitle,
+      description: fourthBadgeParagraph,
+    },
+  ];
+
   return (
-    <section className="badges-section">
-      <h2 className="badges-section__title">{title}</h2>
+    <section className="badge-section">
+      <div className="badge-section__container">
+        <SectionTitle
+          title={title}
+          colorVersion="section-title--version-with-white-color"
+          versionWithTextAlign="section-title--version-with-text-align"
+        />
+        <div className="badge-section__container__grid">
+          {badges.map((badge) => (
+            <div key={badge.title} className="badge-section__card">
+              <Image
+                className="badge-section__card__image"
+                src={badge.image}
+                alt=""
+                width={200}
+                height={200}
+              />
 
-      <ul className="badges-section__list">
-        <li className="badges-section__list__item">
-          <Image
-            className="badges-section__list__item__image"
-            src={firstBadgeImage}
-            alt=""
-            width={200}
-            height={200}
-          />
-          <h3 className="badges-section__list__item__title">
-            {firstBadgeTitle}
-          </h3>
-          <p>{firstBadgeParagraph}</p>
-        </li>
-
-        <li className="badges-section__list__item">
-          <Image
-            className="badges-section__list__item__image"
-            src={secondBadgeImage}
-            alt=""
-            width={200}
-            height={200}
-          />
-          <h3 className="badges-section__list__item__title">
-            {secondBadgeTitle}
-          </h3>
-          <p>{secondBadgeParagraph}</p>
-        </li>
-
-        <li className="badges-section__list__item">
-          <Image
-            className="badges-section__list__item__image"
-            src={thirdBadgeImage}
-            alt=""
-            width={200}
-            height={200}
-          />
-          <h3 className="badges-section__list__item__title">
-            {thirdBadgeTitle}
-          </h3>
-          <p>{thirdBadgeParagraph}</p>
-        </li>
-
-        <li className="badges-section__list__item">
-          <Image
-            className="badges-section__list__item__image"
-            src={fourthBadgeImage}
-            alt=""
-            width={200}
-            height={200}
-          />
-          <h3 className="badges-section__list__item__title">
-            {fourthBadgeTitle}
-          </h3>
-          <p>{fourthBadgeParagraph}</p>
-        </li>
-      </ul>
+              <h3 className="badge-section__card-title">{badge.title}</h3>
+              <div className="badge-section__card-desc">
+                {badge.description}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 // Component
 import Layout from "../components/Layout/Layout";
 

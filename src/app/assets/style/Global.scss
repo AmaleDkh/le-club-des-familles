@@ -1,5 +1,6 @@
 @use "../../assets/style/Colors.scss" as colors;
 @import "./Fonts.scss";
+@import "./mixins/breakpoints.scss";
 
 :root {
   --font-gagalin: "Gagalin", sans-serif;
@@ -17,20 +18,41 @@ h2 {
   font-family: var(--font-gagalin);
 }
 
+h2,
+h3 {
+  color: colors.$orange-color;
+}
+
 h1 {
-  font-size: 64px;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 4rem;
+  }
 }
 
 h2 {
-  font-size: 56px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+
+  @include respond-to-medium {
+    font-size: 2rem;
+  }
 }
 
 h3 {
   font-family: var(--font-dreaming);
-  font-size: 40px;
-}
+  font-size: 32px;
+  margin: 0 0 24px 0;
 
-h2,
-h3 {
-  color: colors.$orange-color;
+  @include respond-to-medium {
+    font-size: 24px;
+    margin: 0 0 16px 0;
+  }
 }

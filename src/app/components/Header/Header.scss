@@ -1,15 +1,95 @@
 @use "../../assets/style/Colors.scss" as colors;
+@import "../../assets/style/mixins/breakpoints.scss";
 
 .header {
-  padding: 24px 104px;
   background-color: colors.$orange-color;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  color: white;
+  padding: 8px 104px;
+  // position: fixed;
+  // top: 0;
+  // z-index: 1000;
+  width: -webkit-fill-available;
 
-  &__navigation-part {
+  @include respond-to-extra-large {
+    padding: 8px 40px;
+  }
+
+  @include respond-to-medium {
+    padding: 8px 16px;
+  }
+
+  &__nav {
     display: flex;
     align-items: center;
-    gap: 80px;
+    justify-content: space-between;
+
+    &__desktop-menu {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &__link {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+    }
+
+    &__mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    &__mobile-menu {
+      position: fixed;
+      inset: 0;
+      background-color: colors.$orange-color;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1.2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+
+      &--open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      &__mobile-close {
+        position: absolute;
+        top: 36px;
+        right: 16px;
+        padding: 0;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+
+      &__link {
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s;
+      }
+    }
+
+    @include respond-to-large {
+      &__desktop-menu {
+        display: none;
+      }
+
+      &__mobile-toggle {
+        display: block;
+      }
+    }
   }
 }

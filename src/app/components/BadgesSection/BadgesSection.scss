@@ -1,30 +1,63 @@
 @use "../../assets/style/Colors.scss" as colors;
+@import "../../assets/style/mixins/breakpoints.scss";
 
-.badges-section {
+.badge-section {
   background-color: colors.$orange-color;
-  color: white;
-  padding: 64px 104px;
+  padding: 4rem 104px;
 
-  &__title {
-    text-align: center;
-    color: white;
+  @include respond-to-extra-large {
+    padding: 4rem 40px;
   }
 
-  &__list {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
+  @include respond-to-medium {
+    padding: 2rem 16px;
+  }
 
-    &__item {
-      text-align: center;
+  &__container {
+    max-width: 1200px;
+    margin: 0;
 
-      &__image {
-        border-radius: 50%;
+    &__grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+
+      @include respond-to-extra-large {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      &__title {
-        color: white;
+      @include respond-to-medium {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
+  }
+
+  &__card {
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &__image {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: black;
+  }
+
+  &__card-desc {
+    font-family: "Lato", sans-serif;
+    font-size: 0.95rem;
+    color: black;
   }
 }

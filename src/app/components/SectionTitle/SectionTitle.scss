@@ -1,0 +1,15 @@
+@import "../../assets/style/mixins/breakpoints.scss";
+@import "../../assets/style/Colors.scss";
+
+.section-title {
+  text-align: start;
+  margin-bottom: 2.5rem;
+
+  &--version-with-white-color {
+    color: white;
+  }
+
+  &--version-with-text-align {
+    text-align: center;
+  }
+}
