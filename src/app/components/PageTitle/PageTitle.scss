@@ -1,3 +1,18 @@
+@use "../../assets/style/mixins/breakpoints.scss";
+
 .page-title {
-  margin: 64px 104px;
+  text-align: center;
+  padding: 4rem 104px 0 104px;
+
+  @include breakpoints.respond-to-extra-large {
+    padding: 4rem 40px 0 40px;
+  }
+
+  @include breakpoints.respond-to-medium {
+    padding: 2rem 16px 0 16px;
+  }
+
+  &__paragraph {
+    margin: 0;
+  }
 }

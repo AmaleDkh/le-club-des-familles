@@ -1,5 +1,5 @@
+@use "../../assets/style/mixins/breakpoints.scss";
 @use "../../assets/style/Colors.scss" as colors;
-@import "../../assets/style/mixins/breakpoints.scss";
 
 .button {
   display: flex;
@@ -20,10 +20,6 @@
   }
 
   &--margin-top-version {
-    margin-top: 56px;
-
-    @include respond-to-medium {
-      margin-top: 32px;
-    }
+    margin-top: 2rem;
   }
 }

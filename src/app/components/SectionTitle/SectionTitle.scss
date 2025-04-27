@@ -1,9 +1,6 @@
-@import "../../assets/style/mixins/breakpoints.scss";
-@import "../../assets/style/Colors.scss";
-
 .section-title {
   text-align: start;
-  margin-bottom: 2.5rem;
+  margin: 0 0 2.5rem 0;
 
   &--version-with-white-color {
     color: white;

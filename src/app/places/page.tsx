@@ -6,16 +6,18 @@ import PageTitle from "../components/PageTitle/PageTitle";
 import BadgesSection from "../components/BadgesSection/BadgesSection";
 import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
+import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
+import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hook
 import { useHomepageData } from "@/hooks/useData";
 
-function Places() {
+function PlacesPage() {
   const homepageContent = useHomepageData();
 
   return (
     <Layout>
-      <PageTitle title="Titre" />
+      <PageTitle title="Titre" paragraph="" />
 
       {homepageContent?.[0] && (
         <>
@@ -40,6 +42,8 @@ function Places() {
             buttonVersion={false}
           />
 
+          <ImageSeparator imageUrl="" imageAlt="" />
+
           <JoinTheClub
             title={homepageContent[0].join_the_club_title}
             diggerImage={homepageContent[0].join_the_club_digger_image}
@@ -51,8 +55,10 @@ function Places() {
           />
         </>
       )}
+
+      <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" />
     </Layout>
   );
 }
 
-export default Places;
+export default PlacesPage;

@@ -1,6 +1,7 @@
 // Style
 import "./SectionTitle.scss";
 
+// Type
 interface SectionTitleProps {
   title: string;
   colorVersion: string;
@@ -10,7 +11,6 @@ interface SectionTitleProps {
 function SectionTitle({
   title,
   colorVersion,
-
   versionWithTextAlign,
 }: SectionTitleProps) {
   return (

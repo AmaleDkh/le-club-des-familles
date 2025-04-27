@@ -1,14 +1,14 @@
+@use "../../assets/style/mixins/breakpoints.scss";
 @use "../../assets/style/Colors.scss" as colors;
-@import "../../assets/style/mixins/breakpoints.scss";
 
 .recommended {
   padding: 4rem 104px;
 
-  @include respond-to-extra-large {
+  @include breakpoints.respond-to-extra-large {
     padding: 4rem 40px;
   }
 
-  @include respond-to-medium {
+  @include breakpoints.respond-to-medium {
     padding: 2rem 16px;
   }
 
@@ -24,7 +24,6 @@
 
   &__card {
     background-color: white;
-    border-radius: 1rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     display: flex;
@@ -57,17 +56,10 @@
     justify-content: space-between;
   }
 
-  &__name {
-    font-size: 1.125rem;
-    color: colors.$orange-color;
-    margin-bottom: 0.25rem;
-  }
-
   &__location {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 0.875rem;
     margin-bottom: 0.5rem;
   }
 
@@ -78,10 +70,8 @@
 
   &__tag {
     background-color: colors.$yellow-color;
-    color: black;
     padding: 0.25rem 0.75rem;
     border-radius: 0.5rem;
-    font-size: 0.75rem;
     text-transform: uppercase;
     display: inline-block;
   }

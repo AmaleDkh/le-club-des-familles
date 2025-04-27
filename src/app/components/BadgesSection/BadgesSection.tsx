@@ -81,7 +81,7 @@ function BadgesSection({
               />
 
               <h3 className="badge-section__card-title">{badge.title}</h3>
-              <div className="badge-section__card-desc">
+              <div className="badge-section__card-description">
                 {badge.description}
               </div>
             </div>

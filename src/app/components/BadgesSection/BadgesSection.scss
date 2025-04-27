@@ -1,15 +1,15 @@
+@use "../../assets/style/mixins/breakpoints.scss";
 @use "../../assets/style/Colors.scss" as colors;
-@import "../../assets/style/mixins/breakpoints.scss";
 
 .badge-section {
   background-color: colors.$orange-color;
   padding: 4rem 104px;
 
-  @include respond-to-extra-large {
+  @include breakpoints.respond-to-extra-large {
     padding: 4rem 40px;
   }
 
-  @include respond-to-medium {
+  @include breakpoints.respond-to-medium {
     padding: 2rem 16px;
   }
 
@@ -22,11 +22,11 @@
       gap: 2rem;
       grid-template-columns: repeat(4, 1fr);
 
-      @include respond-to-extra-large {
+      @include breakpoints.respond-to-extra-large {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      @include respond-to-medium {
+      @include breakpoints.respond-to-medium {
         grid-template-columns: repeat(1, 1fr);
       }
     }
@@ -52,12 +52,6 @@
   &__card-title {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: black;
-  }
-
-  &__card-desc {
-    font-family: "Lato", sans-serif;
-    font-size: 0.95rem;
     color: black;
   }
 }

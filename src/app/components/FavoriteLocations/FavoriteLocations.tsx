@@ -76,8 +76,8 @@ function FavoriteLocations({
 
       {buttonVersion === true && (
         <Button
-          text="@LECLUBDESFAMILLES"
-          link="/contact"
+          text="DÉCOUVREZ TOUS LES LIEUX"
+          link="/places"
           marginAutoVersion="button--center-version"
           marginTopVersion="button--margin-top-version"
         />

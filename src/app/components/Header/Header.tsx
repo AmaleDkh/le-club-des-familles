@@ -28,12 +28,14 @@ function Header() {
     <header className="header">
       <nav className="header__nav">
         {LogoContent?.[0] && (
-          <Image
-            src={LogoContent[0].logo_white_version}
-            alt=""
-            width={200}
-            height={200}
-          />
+          <Link href="/">
+            <Image
+              src={LogoContent[0].logo_white_version}
+              alt=""
+              width={200}
+              height={200}
+            />
+          </Link>
         )}
 
         <div className="header__nav__desktop-menu">

@@ -1,12 +1,17 @@
 // Style
 import "./PageTitle.scss";
-
 interface PageTitleProps {
   title: string;
+  paragraph: string;
 }
 
-function PageTitle({ title }: PageTitleProps) {
-  return <h1 className="page-title">{title}</h1>;
+function PageTitle({ title, paragraph }: PageTitleProps) {
+  return (
+    <div className="page-title">
+      <h1>{title}</h1>
+      {/* <p className="page-title__paragraph">{paragraph}</p> */}
+    </div>
+  );
 }
 
 export default PageTitle;

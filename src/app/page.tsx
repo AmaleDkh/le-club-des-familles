@@ -9,6 +9,8 @@ import Layout from "./components/Layout/Layout";
 import BadgesSection from "./components/BadgesSection/BadgesSection";
 import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
 import JoinTheClub from "./components/JoinTheClub/JoinTheClub";
+import ImageSeparator from "./components/ImageSeparator/ImageSeparator";
+import InstagramFeed from "./components/InstagramFeed/InstagramFeed";
 
 // Hook
 import { useHomepageData } from "@/hooks/useData";
@@ -62,10 +64,14 @@ export default function Home() {
               fourthBadgeParagraph={homepageContent[0].fourth_badge_paragraph}
             />
 
+            <ImageSeparator imageUrl="" imageAlt="" />
+
             <FavoriteLocations
               title={homepageContent[0].favorite_locations_title}
               buttonVersion={true}
             />
+
+            <ImageSeparator imageUrl="" imageAlt="" />
 
             <JoinTheClub
               title={homepageContent[0].join_the_club_title}
@@ -76,6 +82,8 @@ export default function Home() {
               partnerTitle={homepageContent[0].join_the_club_partner_title}
               partnerText={homepageContent[0].join_the_club_partner_text}
             />
+
+            <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" />
           </>
         )}
       </Layout>

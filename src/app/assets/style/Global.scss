@@ -1,6 +1,6 @@
+@use "./mixins/breakpoints.scss";
 @use "../../assets/style/Colors.scss" as colors;
-@import "./Fonts.scss";
-@import "./mixins/breakpoints.scss";
+@use "./Fonts.scss";
 
 :root {
   --font-gagalin: "Gagalin", sans-serif;
@@ -24,6 +24,8 @@ h3 {
 }
 
 h1 {
+  margin: 0;
+
   font-size: 2.5rem;
   font-weight: 500;
   line-height: 1.2;
@@ -41,7 +43,7 @@ h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 
-  @include respond-to-medium {
+  @include breakpoints.respond-to-medium {
     font-size: 2rem;
   }
 }
@@ -49,10 +51,10 @@ h2 {
 h3 {
   font-family: var(--font-dreaming);
   font-size: 32px;
-  margin: 0 0 24px 0;
+  margin: 0 0 0.75rem 0;
 
-  @include respond-to-medium {
-    font-size: 24px;
-    margin: 0 0 16px 0;
-  }
+  // @include breakpoints.respond-to-medium {
+  //   font-size: 24px;
+  //   margin: 0 0 16px 0;
+  // }
 }
