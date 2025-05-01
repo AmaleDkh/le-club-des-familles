@@ -2,8 +2,8 @@
 
 // Components
 import Layout from "./components/Layout/Layout";
-// import Banner from "./components/Banner/Banner";
-// import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
+import HeroBanner from "./components/HeroBanner/HeroBanner";
+import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
 // import IssuesSection from "./components/IssuesSection/IssuesSection";
 // import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
 import BadgesSection from "./components/BadgesSection/BadgesSection";
@@ -21,11 +21,11 @@ export default function Home() {
   return (
     <>
       <Layout>
-        {/* {homepageContent?.[0] && (
-          <Banner photo={homepageContent[0].banner_photo} />
-        )} */}
+        {homepageContent?.[0] && (
+          <HeroBanner photo={homepageContent[0].banner_photo} />
+        )}
 
-        {/* <ThreeKeyFigures /> */}
+        <ThreeKeyFigures title="title" subtitle="subtitle" />
 
         {homepageContent?.[0] && (
           <>

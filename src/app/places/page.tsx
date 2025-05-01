@@ -8,6 +8,7 @@ import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
 import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
 import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
+import AllThePlaces from "../components/AllThePlaces/AllThePlaces";
 
 // Hook
 import { useHomepageData } from "@/hooks/useData";
@@ -17,7 +18,9 @@ function PlacesPage() {
 
   return (
     <Layout>
-      <PageTitle title="Titre" paragraph="" />
+      <PageTitle title="Tous les lieux" paragraph="" />
+
+      <AllThePlaces />
 
       {homepageContent?.[0] && (
         <>
