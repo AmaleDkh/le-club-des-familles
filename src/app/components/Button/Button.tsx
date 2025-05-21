@@ -8,8 +8,8 @@ import "./Button.scss";
 type ButtonProps = {
   text: string;
   link: string;
-  marginAutoVersion: string;
-  marginTopVersion: string;
+  marginAutoVersion?: string;
+  marginTopVersion?: string;
 };
 
 function Button({
