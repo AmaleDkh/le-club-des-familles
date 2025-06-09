@@ -11,10 +11,16 @@ const airTableAdultBadgesName =
 const airTableValueBadgesName =
   process.env.NEXT_PUBLIC_AIRTABLE_VALUE_BADGES_BASE_NAME;
 
+const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
+
 // Get homepage content
 export const fetchHomepageContent = async () => {
   try {
-    const response = await fetch(`${apiUrl}/homepage`);
+    const response = await fetch(
+      `${apiStrapiUrl}/homepage?populate[ThreeKeyFigures]=true`
+    );
+
+    // console.log("response", response);
 
     if (!response.ok) {
       throw new Error("Erreur lors de la requête GET de la page");
@@ -22,12 +28,32 @@ export const fetchHomepageContent = async () => {
 
     const page = await response.json();
 
+    console.log("page", page);
+
     return page;
   } catch (error) {
     console.error("Erreur lors de la récupération de la page", error);
     throw error;
   }
 };
+
+// Get homepage content
+// export const fetchHomepageContent = async () => {
+//   try {
+//     const response = await fetch(`${apiUrl}/homepage`);
+
+//     if (!response.ok) {
+//       throw new Error("Erreur lors de la requête GET de la page");
+//     }
+
+//     const page = await response.json();
+
+//     return page;
+//   } catch (error) {
+//     console.error("Erreur lors de la récupération de la page", error);
+//     throw error;
+//   }
+// };
 
 // Get logo
 export const fetchLogo = async () => {

@@ -53,19 +53,33 @@ type Logo = {
   logo_white_version: string;
 };
 
+type ThreeKeyFigures = {
+  SectionTitle: string;
+  FirstKeyFigureNumber: string;
+  FirstKeyFigureParagraph: string;
+  SecondKeyFigureNumber: string;
+  SecondKeyFigureParagraph: string;
+  ThirdKeyFigureNumber: string;
+  ThirdKeyFigureParagraph: string;
+};
+
+type HomeContent = {
+  ThreeKeyFigures: ThreeKeyFigures;
+};
+
 export const useHomepageData = () => {
-  const [homepageContent, setHomepageContent] = useState<HomepageContent[]>([]);
+  const [homepageContent, setHomepageContent] = useState<HomeContent | null>(
+    null
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const homepageContentData = await fetchHomepageContent();
+        const homepagePageContentData = await fetchHomepageContent();
 
-        const homepage = homepageContentData.map(
-          (HomepageContent: { acf: HomepageContent }) => HomepageContent.acf
-        );
+        const content = homepagePageContentData.data;
 
-        setHomepageContent(homepage);
+        setHomepageContent(content);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -78,6 +92,32 @@ export const useHomepageData = () => {
 
   return homepageContent;
 };
+
+// export const useHomepageData = () => {
+//   const [homepageContent, setHomepageContent] = useState<HomepageContent[]>([]);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const homepageContentData = await fetchHomepageContent();
+
+//         const homepage = homepageContentData.map(
+//           (HomepageContent: { acf: HomepageContent }) => HomepageContent.acf
+//         );
+
+//         setHomepageContent(homepage);
+//       } catch (error) {
+//         console.error(
+//           "Une erreur est survenue lors de la récupération de la section",
+//           error
+//         );
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   return homepageContent;
+// };
 
 export const useLogoData = () => {
   const [LogoContent, setLogoContent] = useState<Logo[]>([]);
