@@ -21,15 +21,15 @@ export default function Home() {
   return (
     <>
       <Layout>
-        {homepageContent?.[0] && (
+        {/* {homepageContent?.[0] && (
           <HeroBanner photo={homepageContent[0].banner_photo} />
-        )}
+        )} */}
 
         <ThreeKeyFigures title="title" subtitle="subtitle" />
 
-        {homepageContent?.[0] && (
-          <>
-            {/* <IssuesSection
+        {/* {homepageContent?.[0] && ( */}
+        <>
+          {/* <IssuesSection
               title={homepageContent[0].issues_title}
               firstIssueTitle={homepageContent[0].first_issue_title}
               firstIssueText={homepageContent[0].first_issue_text}
@@ -48,7 +48,7 @@ export default function Home() {
               buttonVersion={true}
             /> */}
 
-            <BadgesSection
+          {/* <BadgesSection
               title={homepageContent[0].badges_title}
               firstBadgeImage={homepageContent[0].first_badge_image}
               firstBadgeTitle={homepageContent[0].first_badge_title}
@@ -62,18 +62,18 @@ export default function Home() {
               fourthBadgeImage={homepageContent[0].fourth_badge_image}
               fourthBadgeTitle={homepageContent[0].fourth_badge_title}
               fourthBadgeParagraph={homepageContent[0].fourth_badge_paragraph}
-            />
+            /> */}
 
-            <ImageSeparator imageUrl="" imageAlt="" />
+          <ImageSeparator imageUrl="" imageAlt="" />
 
-            <FavoriteLocations
+          {/* <FavoriteLocations
               title={homepageContent[0].favorite_locations_title}
               buttonVersion={true}
-            />
+            /> */}
 
-            <ImageSeparator imageUrl="" imageAlt="" />
+          <ImageSeparator imageUrl="" imageAlt="" />
 
-            <JoinTheClub
+          {/* <JoinTheClub
               title={homepageContent[0].join_the_club_title}
               diggerImage={homepageContent[0].join_the_club_digger_image}
               diggerTitle={homepageContent[0].join_the_club_digger_title}
@@ -81,11 +81,11 @@ export default function Home() {
               partnerImage={homepageContent[0].join_the_club_partner_image}
               partnerTitle={homepageContent[0].join_the_club_partner_title}
               partnerText={homepageContent[0].join_the_club_partner_text}
-            />
+            /> */}
 
-            <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" />
-          </>
-        )}
+          <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" />
+        </>
+        {/* )} */}
       </Layout>
     </>
   );

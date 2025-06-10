@@ -22,7 +22,7 @@ function PlacesPage() {
 
       <AllThePlaces />
 
-      {homepageContent?.[0] && (
+      {/* {homepageContent?.[0] && (
         <>
           <BadgesSection
             title={homepageContent[0].badges_title}
@@ -57,7 +57,7 @@ function PlacesPage() {
             partnerText={homepageContent[0].join_the_club_partner_text}
           />
         </>
-      )}
+      )} */}
 
       <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" />
     </Layout>
