@@ -1,3 +1,6 @@
+// Next element
+import Image from "next/image";
+
 // Style
 import "./ImageSeparator.scss";
 
@@ -10,7 +13,7 @@ interface ImageSeparatorProps {
 function ImageSeparator({ imageUrl, imageAlt }: ImageSeparatorProps) {
   return (
     <div className="image-separator">
-      <img src={imageUrl} alt={imageAlt} className="image-separator__image" />
+      <Image src={imageUrl} alt={imageAlt} className="image-separator__image" />
       <div className="image-separator__overlay" />
     </div>
   );

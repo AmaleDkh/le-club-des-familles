@@ -2,21 +2,21 @@
 
 // Components
 import Layout from "./components/Layout/Layout";
-import HeroBanner from "./components/HeroBanner/HeroBanner";
+// import HeroBanner from "./components/HeroBanner/HeroBanner";
 import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
 // import IssuesSection from "./components/IssuesSection/IssuesSection";
 // import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
-import BadgesSection from "./components/BadgesSection/BadgesSection";
-import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
-import JoinTheClub from "./components/JoinTheClub/JoinTheClub";
+// import BadgesSection from "./components/BadgesSection/BadgesSection";
+// import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
+// import JoinTheClub from "./components/JoinTheClub/JoinTheClub";
 import ImageSeparator from "./components/ImageSeparator/ImageSeparator";
 import InstagramFeed from "./components/InstagramFeed/InstagramFeed";
 
 // Hook
-import { useHomepageData } from "@/hooks/useData";
+// import { useHomepageData } from "@/hooks/useData";
 
 export default function Home() {
-  const homepageContent = useHomepageData();
+  // const homepageContent = useHomepageData();
 
   return (
     <>
@@ -25,7 +25,7 @@ export default function Home() {
           <HeroBanner photo={homepageContent[0].banner_photo} />
         )} */}
 
-        <ThreeKeyFigures title="title" subtitle="subtitle" />
+        <ThreeKeyFigures />
 
         {/* {homepageContent?.[0] && ( */}
         <>

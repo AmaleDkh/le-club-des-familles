@@ -3,15 +3,15 @@
 // Component
 import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
-import BadgesSection from "../components/BadgesSection/BadgesSection";
-import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
+// import BadgesSection from "../components/BadgesSection/BadgesSection";
+// import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
 import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hook
-import { useHomepageData } from "@/hooks/useData";
+// import { useHomepageData } from "@/hooks/useData";
 
 function AboutPage() {
-  const homepageContent = useHomepageData();
+  // const homepageContent = useHomepageData();
 
   return (
     <Layout>

@@ -1,5 +1,6 @@
 // Next & React elements
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import {
   Search,
   ChevronDown,
@@ -240,7 +241,7 @@ function AllThePlaces() {
         <div className="all-the-places__filters">
           {activeFilters.length > 0 && (
             <div className="all-the-places__active-filters">
-              {activeFilters.map((filter) => (
+              {activeFilters.map((filter: any) => (
                 <div key={filter} className="all-the-places__active-filter">
                   <span className="all-the-places__active-filter-text">
                     {filter}
@@ -263,7 +264,7 @@ function AllThePlaces() {
           )}
 
           <div className="all-the-places__filter-buttons">
-            {badgeTypes.map((type) => (
+            {badgeTypes.map((type: any) => (
               <div
                 key={type.key}
                 className="all-the-places__filter-button-wrapper"
@@ -275,7 +276,9 @@ function AllThePlaces() {
                       : ""
                   } ${
                     activeFilters.some((filter) =>
-                      type.badges.some((badge) => badge.fields.Name === filter)
+                      type.badges.some(
+                        (badge: any) => badge.fields.Name === filter
+                      )
                     )
                       ? "all-the-places__filter-button--selected"
                       : ""
@@ -300,7 +303,7 @@ function AllThePlaces() {
                   <div className="all-the-places__dropdown">
                     <div className="all-the-places__dropdown-content">
                       {type.badges.length > 0 ? (
-                        type.badges.map((badge) => (
+                        type.badges.map((badge: any) => (
                           <div
                             key={badge.id}
                             className="all-the-places__dropdown-item"
@@ -354,7 +357,7 @@ function AllThePlaces() {
           </div>
         ) : filteredPlaces.length > 0 ? (
           <div className="all-the-places__grid">
-            {filteredPlaces.map((place) => {
+            {filteredPlaces.map((place: any) => {
               const images = place.fields.Images || [];
 
               return (
@@ -370,7 +373,7 @@ function AllThePlaces() {
                             key={index}
                             className="all-the-places__carousel-slide"
                           >
-                            <img
+                            <Image
                               src={image.url}
                               alt={`${place.fields.Name} - Image ${index + 1}`}
                               className="all-the-places__card-image"
@@ -380,7 +383,7 @@ function AllThePlaces() {
                       </Slider>
                     ) : (
                       <div className="all-the-places__card-image-placeholder">
-                        <img
+                        <Image
                           src="https://via.placeholder.com/400x300?text=Aucune+image"
                           alt="Aucune image disponible"
                           className="all-the-places__card-image"
@@ -403,11 +406,11 @@ function AllThePlaces() {
 
                     <div className="all-the-places__card-badges">
                       <div className="all-the-places__card-badges-list">
-                        {badgeTypes.map((type) => {
+                        {badgeTypes.map((type: any) => {
                           const badgeIds = place.fields[type.name] || [];
                           return type.badges
-                            .filter((badge) => badgeIds.includes(badge.id))
-                            .map((badge) => (
+                            .filter((badge: any) => badgeIds.includes(badge.id))
+                            .map((badge: any) => (
                               <span
                                 key={badge.id}
                                 className={`all-the-places__badge ${type.color}`}

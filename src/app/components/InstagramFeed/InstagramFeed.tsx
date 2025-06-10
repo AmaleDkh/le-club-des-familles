@@ -1,3 +1,6 @@
+// Next element
+import Image from "next/image";
+
 // Components
 import SectionTitle from "../SectionTitle/SectionTitle";
 import Button from "../Button/Button";
@@ -40,7 +43,7 @@ function InstagramFeed({ paddingTopVersion }: InstagramFeedProps) {
       <div className="instagram-feed__grid">
         {instagramPosts.map((post) => (
           <div key={post.id} className="instagram-feed__item">
-            <img
+            <Image
               src={post.image}
               alt={`Instagram post ${post.id}`}
               className="instagram-feed__image"

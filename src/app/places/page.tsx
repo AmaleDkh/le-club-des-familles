@@ -3,18 +3,18 @@
 // Components
 import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
-import BadgesSection from "../components/BadgesSection/BadgesSection";
-import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
-import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
-import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
+// import BadgesSection from "../components/BadgesSection/BadgesSection";
+// import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
+// import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
+// import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
 import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 import AllThePlaces from "../components/AllThePlaces/AllThePlaces";
 
 // Hook
-import { useHomepageData } from "@/hooks/useData";
+// import { useHomepageData } from "@/hooks/useData";
 
 function PlacesPage() {
-  const homepageContent = useHomepageData();
+  // const homepageContent = useHomepageData();
 
   return (
     <Layout>
