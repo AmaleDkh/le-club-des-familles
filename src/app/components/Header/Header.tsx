@@ -1,7 +1,7 @@
 "use client";
 
 // React & Next elements
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { X, Menu } from "lucide-react";
@@ -14,10 +14,10 @@ import Button from "../Button/Button";
 import "./Header.scss";
 
 // Hook
-import { useLogoData } from "@/hooks/useData";
+// import { useLogoData } from "@/hooks/useData";
 
 function Header() {
-  const LogoContent = useLogoData();
+  // const LogoContent = useLogoData();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -27,7 +27,7 @@ function Header() {
   return (
     <header className="header">
       <nav className="header__nav">
-        {LogoContent?.[0] && (
+        {/* {LogoContent?.[0] && (
           <Link href="/">
             <Image
               src={LogoContent[0].logo_white_version}
@@ -36,7 +36,7 @@ function Header() {
               height={200}
             />
           </Link>
-        )}
+        )} */}
 
         <div className="header__nav__desktop-menu">
           <Link href="/places" className="header__nav__desktop-menu__link">

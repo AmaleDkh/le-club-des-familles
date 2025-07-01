@@ -20,8 +20,6 @@ export const fetchHomepageContent = async () => {
       `${apiStrapiUrl}/homepage?populate[ThreeKeyFigures]=true`
     );
 
-    // console.log("response", response);
-
     if (!response.ok) {
       throw new Error("Erreur lors de la requête GET de la page");
     }

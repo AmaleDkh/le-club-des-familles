@@ -79,6 +79,8 @@ export const useHomepageData = () => {
 
         const content = homepagePageContentData.data;
 
+        console.log("content", content);
+
         setHomepageContent(content);
       } catch (error) {
         console.error(
