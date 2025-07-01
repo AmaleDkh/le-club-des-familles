@@ -16,7 +16,7 @@ function JoinTheClubPage() {
   return (
     <Layout>
       <PageTitle title="Titre" paragraph="" />
-
+      {/* 
       {homepageContent?.[0] && (
         <>
           <BadgesSection
@@ -45,9 +45,9 @@ function JoinTheClubPage() {
             partnerText={homepageContent[0].join_the_club_partner_text}
           />
         </>
-      )}
+      )} */}
 
-      <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" />
+      {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>
   );
 }
