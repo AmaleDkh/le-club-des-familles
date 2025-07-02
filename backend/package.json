@@ -4,7 +4,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "postinstall": "npx strapi --help",
+    "postinstall": "npx strapi --help && npm rebuild @swc/core || true",
     "build": "npx strapi build --debug",
     "console": "npx strapi console",
     "deploy": "npx strapi deploy",
