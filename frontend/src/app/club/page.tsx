@@ -3,9 +3,9 @@
 // Components
 import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
-import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
-import BadgesSection from "../components/BadgesSection/BadgesSection";
-import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
+// import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
+// import BadgesSection from "../components/BadgesSection/BadgesSection";
+// import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hook
 // import { useHomepageData } from "@/hooks/useData";

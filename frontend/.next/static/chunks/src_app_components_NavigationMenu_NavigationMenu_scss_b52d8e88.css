@@ -1,0 +1,17 @@
+/* [project]/src/app/components/NavigationMenu/NavigationMenu.scss.css [app-client] (css) */
+.navigation-menu {
+  color: #fff;
+}
+
+.navigation-menu__list {
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+}
+
+.navigation-menu__list__item__link {
+  text-decoration: none;
+  color: #fff;
+}
+
+/*# sourceMappingURL=src_app_components_NavigationMenu_NavigationMenu_scss_b52d8e88.css.map*/

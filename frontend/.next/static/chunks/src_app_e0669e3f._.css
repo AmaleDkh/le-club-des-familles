@@ -1,0 +1,115 @@
+@import "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap";
+/* [project]/src/app/assets/style/Global.scss.css [app-client] (css) */
+:root {
+  --font-gagalin: "Gagalin", sans-serif;
+  --font-dreaming: "Dreaming Outloud", sans-serif;
+  --font-lato: "Lato", sans-serif;
+}
+
+* {
+  font-family: var(--font-lato);
+  font-weight: 300;
+}
+
+h1, h2 {
+  font-family: var(--font-gagalin);
+}
+
+h2, h3 {
+  color: #f60;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+@media (width >= 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (width >= 1024px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (width <= 767px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-family: var(--font-dreaming);
+  font-size: 32px;
+  margin: 0 0 .75rem;
+}
+
+
+/* [project]/src/app/GagalinRegular-s.p.otf (static in css) */
+/* embedded static asset "/_next/static/media/GagalinRegular-s.p.d03d1c30.otf" */
+
+/* [project]/src/app/gagalin_f2f71ea3.module.css [app-client] (css) */
+@font-face {
+  font-family: gagalin;
+  src: url("../media/GagalinRegular-s.p.d03d1c30.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: gagalin Fallback;
+  src: local(Arial);
+  ascent-override: 93.86%;
+  descent-override: 18.21%;
+  line-gap-override: 0.0%;
+  size-adjust: 107.07%;
+}
+
+.gagalin_f2f71ea3-module__syj07a__className {
+  font-family: gagalin, gagalin Fallback;
+}
+
+.gagalin_f2f71ea3-module__syj07a__variable {
+  --font-gagalin: "gagalin", "gagalin Fallback";
+}
+
+
+/* [project]/src/app/DreamingOutloudAllcapsRegular-s.p.otf (static in css) */
+/* embedded static asset "/_next/static/media/DreamingOutloudAllcapsRegular-s.p.779e356e.otf" */
+
+/* [project]/src/app/dreamingoutloud_9828834e.module.css [app-client] (css) */
+@font-face {
+  font-family: dreamingOutloud;
+  src: url("../media/DreamingOutloudAllcapsRegular-s.p.779e356e.otf") format("opentype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: dreamingOutloud Fallback;
+  src: local(Arial);
+  ascent-override: 91.95%;
+  descent-override: 39.7%;
+  line-gap-override: 0.0%;
+  size-adjust: 95.71%;
+}
+
+.dreamingoutloud_9828834e-module__kHeeKW__className {
+  font-family: dreamingOutloud, dreamingOutloud Fallback;
+}
+
+.dreamingoutloud_9828834e-module__kHeeKW__variable {
+  --font-dreaming: "dreamingOutloud", "dreamingOutloud Fallback";
+}
+
+
+/*# sourceMappingURL=src_app_e0669e3f._.css.map*/

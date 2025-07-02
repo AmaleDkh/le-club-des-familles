@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/components/Button/Button.scss.css"],"sourcesContent":[".button{display:flex;width:fit-content;align-items:center;gap:.5rem;font-weight:500;text-decoration:none;background-color:#fff200;color:#000;padding:12px 24px;border-radius:.5rem;transition:all .3s ease;cursor:pointer}.button--center-version{margin:auto}.button--margin-top-version{margin-top:2rem}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;AAA0N;;;;AAAoC"}}]
+}

@@ -1,0 +1,16 @@
+/* [project]/src/app/components/Footer/Footer.scss.css [app-client] (css) */
+.footer {
+  padding: 24px 104px;
+  background-color: #f60;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__navigation-part {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+/*# sourceMappingURL=src_app_components_Footer_Footer_scss_b52d8e88.css.map*/

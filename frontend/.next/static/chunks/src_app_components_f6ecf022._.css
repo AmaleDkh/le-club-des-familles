@@ -1,0 +1,229 @@
+/* [project]/src/app/components/Button/Button.scss.css [app-client] (css) */
+.button {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: #fff200;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: .5rem;
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.button--center-version {
+  margin: auto;
+}
+
+.button--margin-top-version {
+  margin-top: 2rem;
+}
+
+
+/* [project]/src/app/components/Header/Header.scss.css [app-client] (css) */
+.header {
+  background-color: #f60;
+  color: #fff;
+  padding: 8px 104px;
+  width: -webkit-fill-available;
+}
+
+@media (width <= 1200px) {
+  .header {
+    padding: 8px 40px;
+  }
+}
+
+@media (width <= 767px) {
+  .header {
+    padding: 8px 16px;
+  }
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__nav__desktop-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header__nav__desktop-menu__link {
+  color: inherit;
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.header__nav__mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.header__nav__mobile-menu {
+  position: fixed;
+  inset: 0;
+  background-color: #f60;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease-in-out;
+}
+
+.header__nav__mobile-menu--open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header__nav__mobile-menu__mobile-close {
+  position: absolute;
+  top: 36px;
+  right: 16px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.header__nav__mobile-menu__link {
+  text-decoration: none;
+  color: inherit;
+  transition: color .3s;
+}
+
+@media (width <= 992px) {
+  .header__nav__desktop-menu {
+    display: none;
+  }
+
+  .header__nav__mobile-toggle {
+    display: block;
+  }
+}
+
+
+/* [project]/src/app/components/NavigationMenu/NavigationMenu.scss.css [app-client] (css) */
+.navigation-menu {
+  color: #fff;
+}
+
+.navigation-menu__list {
+  display: flex;
+  gap: 40px;
+  list-style-type: none;
+}
+
+.navigation-menu__list__item__link {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+/* [project]/src/app/components/Footer/Footer.scss.css [app-client] (css) */
+.footer {
+  padding: 24px 104px;
+  background-color: #f60;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__navigation-part {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+
+/* [project]/src/app/components/SectionTitle/SectionTitle.scss.css [app-client] (css) */
+.section-title {
+  text-align: start;
+  margin: 0 0 2.5rem;
+}
+
+.section-title--version-with-white-color {
+  color: #fff;
+}
+
+.section-title--version-with-text-align {
+  text-align: center;
+}
+
+
+/* [project]/src/app/components/ThreeKeyFigures/ThreeKeyFigures.scss.css [app-client] (css) */
+.statistics-section {
+  background-color: #f60;
+  padding: 4rem 104px;
+}
+
+@media (width <= 1200px) {
+  .statistics-section {
+    padding: 4rem 40px;
+  }
+}
+
+@media (width <= 767px) {
+  .statistics-section {
+    padding: 2rem 16px;
+  }
+}
+
+.statistics-section__container {
+  max-width: 1280px;
+}
+
+.statistics-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+@media (width <= 576px) {
+  .statistics-section__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.statistics-section__item {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 20px #0000000d;
+  transition: transform .3s;
+}
+
+.statistics-section__icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.statistics-section__value {
+  font-family: Gagalin, sans-serif;
+  font-size: 3rem;
+  color: #f60;
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+
+
+/*# sourceMappingURL=src_app_components_f6ecf022._.css.map*/
