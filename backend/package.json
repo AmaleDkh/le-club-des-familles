@@ -5,7 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "postinstall": "npx strapi --help",
-    "build": "npx strapi build",
+    "build": "npx strapi build --debug",
     "console": "npx strapi console",
     "deploy": "npx strapi deploy",
     "dev": "npx strapi develop",
