@@ -1,8 +1,8 @@
 {
   "app": {
     "[project]/src/app/page": [
-      "static/media/GagalinRegular-s.p.d03d1c30.otf",
-      "static/media/DreamingOutloudAllcapsRegular-s.p.779e356e.otf"
+      "static/media/DreamingOutloudAllcapsRegular-s.p.779e356e.otf",
+      "static/media/GagalinRegular-s.p.d03d1c30.otf"
     ]
   },
   "appUsingSizeAdjust": true,
