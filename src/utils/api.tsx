@@ -16,6 +16,9 @@ const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
 // Get homepage content
 export const fetchHomepageContent = async () => {
   try {
+    // const response = await fetch(
+    //   `${apiUrl}/api/homepage?populate[ThreeKeyFigures]=true`
+    // );
     const response = await fetch(
       `${apiStrapiUrl}/homepage?populate[ThreeKeyFigures]=true`
     );

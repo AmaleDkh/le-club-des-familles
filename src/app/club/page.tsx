@@ -8,10 +8,10 @@ import BadgesSection from "../components/BadgesSection/BadgesSection";
 import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hook
-import { useHomepageData } from "@/hooks/useData";
+// import { useHomepageData } from "@/hooks/useData";
 
 function JoinTheClubPage() {
-  const homepageContent = useHomepageData();
+  // const homepageContent = useHomepageData();
 
   return (
     <Layout>
