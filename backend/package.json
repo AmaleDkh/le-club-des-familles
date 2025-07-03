@@ -13,7 +13,6 @@
     "strapi": "npx strapi",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry",
-    "preinstall": "rm -rf node_modules/@swc/core",
     "postinstall": "npm rebuild @swc/core --build-from-source || npm install @swc/core-linux-x64-gnu --save-optional",
     "build": "strapi build"
   },
