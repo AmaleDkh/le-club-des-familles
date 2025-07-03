@@ -5,6 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "postinstall": "npx strapi --help && npm rebuild @swc/core || true",
+    "prebuild": "npm rebuild @swc/core",
     "build": "npx strapi build --debug",
     "console": "npx strapi console",
     "deploy": "npx strapi deploy",
