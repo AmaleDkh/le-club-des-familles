@@ -4,9 +4,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "postinstall": "npx strapi --help && npm rebuild @swc/core || true",
     "prebuild": "npm rebuild @swc/core",
-    "build": "npx strapi build --debug",
     "console": "npx strapi console",
     "deploy": "npx strapi deploy",
     "dev": "npx strapi develop",
@@ -14,7 +12,10 @@
     "start": "npx strapi start",
     "strapi": "npx strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "preinstall": "rm -rf node_modules/@swc/core",
+    "postinstall": "npm rebuild @swc/core --build-from-source || npm install @swc/core-linux-x64-gnu --save-optional",
+    "build": "strapi build"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.17.0",
