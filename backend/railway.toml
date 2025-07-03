@@ -1,8 +1,6 @@
 [build]
 builder = "NIXPACKS"
-
-[build.buildCommand]
-value = "npm ci --production=false && npm rebuild @swc/core --build-from-source && npm run build"
+buildCommand = "npm ci --production=false && npm rebuild @swc/core --build-from-source && npm run build"
 
 [deploy]
 startCommand = "npm start"
