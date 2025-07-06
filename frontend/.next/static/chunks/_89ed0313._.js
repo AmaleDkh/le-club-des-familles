@@ -453,7 +453,7 @@ __turbopack_context__.s({
     "fetchLogo": (()=>fetchLogo)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/build/polyfills/process.js [app-client] (ecmascript)");
-const apiUrl = ("TURBOPACK compile-time value", "http://localhost:1337");
+const apiUrl = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$build$2f$polyfills$2f$process$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].env.NEXT_PUBLIC_API_URL;
 const airTableToken = ("TURBOPACK compile-time value", "patUOELMtPCzek9EI.d98a2ce89099d116d62f6cdaa94f64237d4d004485afc6dbe9e9158152d28f94");
 const airTableId = ("TURBOPACK compile-time value", "app1mvfHKKB9iMhi2");
 const airTableName = ("TURBOPACK compile-time value", "tblqy8wNZRaYRkqZ1");
@@ -461,13 +461,11 @@ const airTableBabyBadgesName = ("TURBOPACK compile-time value", "tbljSBve1eTNiFm
 const airTableChildrenBadgesName = ("TURBOPACK compile-time value", "tbl01npvsCCRv2eUv");
 const airTableAdultBadgesName = ("TURBOPACK compile-time value", "tblf6rb6Xrjvobsj5");
 const airTableValueBadgesName = ("TURBOPACK compile-time value", "tbll0CZvtKuIZiT5A");
-const apiStrapiUrl = ("TURBOPACK compile-time value", "http://localhost:1337/api");
+const apiStrapiUrl = ("TURBOPACK compile-time value", "https://amale.manachem.fr");
 const fetchHomepageContent = async ()=>{
     try {
-        // const response = await fetch(
-        //   `${apiUrl}/api/homepage?populate[ThreeKeyFigures]=true`
-        // );
-        const response = await fetch(`${apiStrapiUrl}/homepage?populate[ThreeKeyFigures]=true`);
+        const response = await fetch(`${apiStrapiUrl}/api/homepage?populate[ThreeKeyFigures]=true`);
+        // console.log("response", response);
         if (!response.ok) {
             throw new Error("Erreur lors de la requête GET de la page");
         }

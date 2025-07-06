@@ -10,6 +10,7 @@ export default [
       origin: [
         "http://localhost:3000",
         "https://le-club-des-familles-91ce.vercel.app/",
+        "https://le-club-des-familles.vercel.app/",
       ],
       methods: ["GET", "POST", "PUT", "DELETE"],
       headers: "*",
