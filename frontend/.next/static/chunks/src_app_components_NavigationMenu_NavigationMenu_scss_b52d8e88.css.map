@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/src/app/components/NavigationMenu/NavigationMenu.scss.css"],"sourcesContent":[".navigation-menu{color:#fff}.navigation-menu__list{display:flex;gap:40px;list-style-type:none}.navigation-menu__list__item__link{text-decoration:none;color:#fff}"],"names":[],"mappings":"AAAA;;;;AAA4B;;;;;;AAAkE"}}]
-}
