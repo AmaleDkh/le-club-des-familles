@@ -10,10 +10,19 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "le-club-des-familles.local",
+        protocol: "https",
+        hostname: "v5.airtableusercontent.com",
+        pathname: "/**",
+        // protocol: "http",
+        // hostname: "le-club-des-familles.local",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+        pathname: "/**",
       },
     ],
+    domains: ["amale.manachem.fr"],
   },
 };
 

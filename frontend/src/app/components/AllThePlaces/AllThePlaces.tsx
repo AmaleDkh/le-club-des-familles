@@ -377,6 +377,8 @@ function AllThePlaces() {
                               src={image.url}
                               alt={`${place.fields.Name} - Image ${index + 1}`}
                               className="all-the-places__card-image"
+                              width={400}
+                              height={400}
                             />
                           </div>
                         ))}
@@ -387,6 +389,8 @@ function AllThePlaces() {
                           src="https://via.placeholder.com/400x300?text=Aucune+image"
                           alt="Aucune image disponible"
                           className="all-the-places__card-image"
+                          width={400}
+                          height={400}
                         />
                       </div>
                     )}

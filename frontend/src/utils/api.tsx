@@ -17,7 +17,18 @@ const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
 export const fetchHomepageContent = async () => {
   try {
     const response = await fetch(
-      `${apiStrapiUrl}/api/homepage?populate[ThreeKeyFigures]=true`
+      `${apiStrapiUrl}/api/homepage?` +
+        `populate[HeroBanner][populate][Image]=true&` +
+        `populate[ThreeKeyFigures]=true&` +
+        `populate[JoinTheClub][populate][DiggerImage]=true&` +
+        `populate[JoinTheClub][populate][PartnerImage]=true&` +
+        `populate[Issues]=true&` +
+        `populate[Concept][populate][ConceptImage]=true&` +
+        `populate[Badges][populate][FirstBadgeImage]=true&` +
+        `populate[Badges][populate][SecondBadgeImage]=true&` +
+        `populate[Badges][populate][ThirdBadgeImage]=true&` +
+        `populate[Badges][populate][FourthBadgeImage]=true&` +
+        `populate[FavoriteLocations]=true`
     );
 
     if (!response.ok) {
@@ -25,6 +36,8 @@ export const fetchHomepageContent = async () => {
     }
 
     const page = await response.json();
+
+    console.log("page", page);
 
     return page;
   } catch (error) {

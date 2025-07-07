@@ -6,51 +6,14 @@ import { useEffect, useState } from "react";
 // API Calls
 import { fetchHomepageContent, fetchLogo } from "@/utils/api";
 
-type HomepageContent = {
-  page_title: string;
-  banner_photo: string;
-  locations_referenced_number: string;
-  locations_referenced_words: string;
-  scouts_number: string;
-  scouts_words: string;
-  instagram_followers_number: string;
-  instagram_followers_words: string;
-  issues_title: string;
-  first_issue_title: string;
-  first_issue_text: string;
-  second_issue_title: string;
-  second_issue_text: string;
-  third_issue_title: string;
-  third_issue_text: string;
-  issues_paragraph: string;
-  concept_title: string;
-  concept_image: string;
-  concept_text: string;
-  badges_title: string;
-  first_badge_image: string;
-  first_badge_title: string;
-  first_badge_paragraph: string;
-  second_badge_image: string;
-  second_badge_title: string;
-  second_badge_paragraph: string;
-  third_badge_image: string;
-  third_badge_title: string;
-  third_badge_paragraph: string;
-  fourth_badge_image: string;
-  fourth_badge_title: string;
-  fourth_badge_paragraph: string;
-  favorite_locations_title: string;
-  join_the_club_title: string;
-  join_the_club_digger_image: string;
-  join_the_club_digger_title: string;
-  join_the_club_digger_text: string;
-  join_the_club_partner_image: string;
-  join_the_club_partner_title: string;
-  join_the_club_partner_text: string;
-};
-
 type Logo = {
   logo_white_version: string;
+};
+
+type HeroBanner = {
+  Title: string;
+  Subtitle: string;
+  Image: ImageData;
 };
 
 type ThreeKeyFigures = {
@@ -63,8 +26,81 @@ type ThreeKeyFigures = {
   ThirdKeyFigureParagraph: string;
 };
 
+type JoinTheClub = {
+  SectionTitle: string;
+  DiggerImage: ImageData;
+  // DiggerImage: string;
+  DiggerTitle: string;
+  DiggerText: string;
+  // PartnerImage: string;
+  PartnerImage: ImageData;
+  PartnerTitle: string;
+  PartnerText: string;
+};
+
+type Issues = {
+  SectionTitle: string;
+  FirstIssueTitle: string;
+  FirstIssueText: string;
+  SecondIssueTitle: string;
+  SecondIssueText: string;
+  ThirdIssueTitle: string;
+  ThirdIssueText: string;
+  IssuesText: string;
+};
+
+type Concept = {
+  ConceptTitle: string;
+  ConceptImage: ImageData;
+  ConceptText: string;
+};
+
+type Badges = {
+  SectionTitle: string;
+  FirstBadgeTitle: string;
+  FirstBadgeImage: ImageData;
+  FirstBadgeText: string;
+  SecondBadgeTitle: string;
+  SecondBadgeImage: ImageData;
+  SecondBadgeText: string;
+  ThirdBadgeTitle: string;
+  ThirdBadgeImage: ImageData;
+  ThirdBadgeText: string;
+  FourthBadgeTitle: string;
+  FourthBadgeImage: ImageData;
+  FourthBadgeText: string;
+};
+
+type FavoriteLocations = {
+  SectionTitle: string;
+};
+
+type ImageFormat = {
+  url: string;
+  width: number;
+  height: number;
+};
+
+type ImageData = {
+  url: string;
+  id: number;
+  caption: string | null;
+  formats: {
+    thumbnail?: ImageFormat;
+    small?: ImageFormat;
+    medium?: ImageFormat;
+    large?: ImageFormat;
+  };
+};
+
 type HomeContent = {
+  HeroBanner: HeroBanner;
   ThreeKeyFigures: ThreeKeyFigures;
+  JoinTheClub: JoinTheClub;
+  Issues: Issues;
+  Concept: Concept;
+  Badges: Badges;
+  FavoriteLocations: FavoriteLocations;
 };
 
 export const useHomepageData = () => {
@@ -78,8 +114,6 @@ export const useHomepageData = () => {
         const homepagePageContentData = await fetchHomepageContent();
 
         const content = homepagePageContentData.data;
-
-        console.log("content", content);
 
         setHomepageContent(content);
       } catch (error) {

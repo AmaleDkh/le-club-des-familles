@@ -1,3 +1,5 @@
+const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
+
 // Next element
 import Image from "next/image";
 
@@ -22,18 +24,24 @@ function ImageAndTextSection({
   marginVersion,
   buttonVersion,
 }: ImageAndTextSectionProps) {
+  const baseUrl = apiStrapiUrl || "";
+
+  const imageUrl = baseUrl + image;
+
   return (
     <section className={`image-and-text-section ${marginVersion}`}>
       <h2 className="image-and-text-section__title">{title}</h2>
 
       <div className="image-and-text-section__content">
-        <Image
-          src={image}
-          alt=""
-          className="image-and-text-section__content__image"
-          width={440}
-          height={600}
-        />
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt={title || "Test"}
+            width={440}
+            height={600}
+            className="image-and-text-section__content__image"
+          />
+        ) : null}
 
         <div className="image-and-text-section__content__texts">
           <p

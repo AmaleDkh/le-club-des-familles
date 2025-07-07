@@ -4,13 +4,11 @@ import SectionTitle from "../SectionTitle/SectionTitle";
 // Style
 import "./ThreeKeyFigures.scss";
 
-// // Hook
+// Hook
 import { useHomepageData } from "@/hooks/useData";
 
 function ThreeKeyFigures() {
   const homepageContent = useHomepageData();
-
-  console.log("homepageContent", homepageContent);
 
   return (
     <>

@@ -55,13 +55,16 @@ function FavoriteLocations({
       <div className="recommended__grid">
         {recommended.map((place) => (
           <div key={place.nom} className="recommended__card group">
-            <Image
-              className="recommended__image group-hover:scale-105"
-              src={place.image}
-              alt="Alt"
-              width={200}
-              height={200}
-            />
+            {place.image ? (
+              <Image
+                className="recommended__image group-hover:scale-105"
+                src={place.image}
+                alt="Alt"
+                width={200}
+                height={200}
+              />
+            ) : null}
+
             <div className="recommended__content">
               <h3 className="recommended__name">{place.nom}</h3>
               <div className="recommended__location">

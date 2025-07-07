@@ -1,3 +1,5 @@
+const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
+
 // Next element
 import Image from "next/image";
 
@@ -27,6 +29,11 @@ function JoinTheClub({
   partnerTitle,
   partnerText,
 }: JoinTheClubSectionProps) {
+  const baseUrl = apiStrapiUrl || "";
+
+  const diggerImgUrl = baseUrl + diggerImage;
+  const partnerImgUrl = baseUrl + partnerImage;
+
   return (
     <section className="join-section">
       <SectionTitle
@@ -38,13 +45,15 @@ function JoinTheClub({
       <div className="join-section__cards">
         <div className="join-card">
           <div className="join-card__top">
-            <Image
-              className="join-card__image"
-              src={diggerImage}
-              alt=""
-              width={600}
-              height={600}
-            />
+            {diggerImgUrl ? (
+              <Image
+                src={diggerImgUrl}
+                alt={diggerTitle || "Digger image"}
+                width={600}
+                height={600}
+                className="join-card__image"
+              />
+            ) : null}
           </div>
           <div className="join-card__content">
             <h3 className="join-card__title">{diggerTitle}</h3>
@@ -60,13 +69,15 @@ function JoinTheClub({
 
         <div className="join-card">
           <div className="join-card__top">
-            <Image
-              className="join-card__image"
-              src={partnerImage}
-              alt=""
-              width={600}
-              height={600}
-            />
+            {partnerImgUrl ? (
+              <Image
+                src={partnerImgUrl}
+                alt={partnerTitle || "Partner image"}
+                width={600}
+                height={600}
+                className="join-card__image"
+              />
+            ) : null}
           </div>
           <div className="join-card__content">
             <h3 className="join-card__title">{partnerTitle}</h3>

@@ -1,3 +1,5 @@
+const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
+
 // Next element
 import Image from "next/image";
 
@@ -38,24 +40,31 @@ function BadgesSection({
   fourthBadgeTitle,
   fourthBadgeParagraph,
 }: BadgesSectionProps) {
+  const baseUrl = apiStrapiUrl || "";
+
+  const firstBadgeImageUrl = baseUrl + firstBadgeImage;
+  const secondBadgeImageUrl = baseUrl + secondBadgeImage;
+  const thirdBadgeImageUrl = baseUrl + thirdBadgeImage;
+  const fourthBadgeImageUrl = baseUrl + fourthBadgeImage;
+
   const badges = [
     {
-      image: firstBadgeImage,
+      image: firstBadgeImageUrl,
       title: firstBadgeTitle,
       description: firstBadgeParagraph,
     },
     {
-      image: secondBadgeImage,
+      image: secondBadgeImageUrl,
       title: secondBadgeTitle,
       description: secondBadgeParagraph,
     },
     {
-      image: thirdBadgeImage,
+      image: thirdBadgeImageUrl,
       title: thirdBadgeTitle,
       description: thirdBadgeParagraph,
     },
     {
-      image: fourthBadgeImage,
+      image: fourthBadgeImageUrl,
       title: fourthBadgeTitle,
       description: fourthBadgeParagraph,
     },
@@ -70,8 +79,8 @@ function BadgesSection({
           versionWithTextAlign="section-title--version-with-text-align"
         />
         <div className="badge-section__container__grid">
-          {badges.map((badge) => (
-            <div key={badge.title} className="badge-section__card">
+          {badges.map((badge, index) => (
+            <div key={`'badge'-${index}`} className="badge-section__card">
               <Image
                 className="badge-section__card__image"
                 src={badge.image}
@@ -85,6 +94,20 @@ function BadgesSection({
                 {badge.description}
               </div>
             </div>
+            // <div key={badge.title} className="badge-section__card">
+            //   <Image
+            //     className="badge-section__card__image"
+            //     src={badge.image}
+            //     alt=""
+            //     width={200}
+            //     height={200}
+            //   />
+
+            //   <h3 className="badge-section__card-title">{badge.title}</h3>
+            //   <div className="badge-section__card-description">
+            //     {badge.description}
+            //   </div>
+            // </div>
           ))}
         </div>
       </div>
