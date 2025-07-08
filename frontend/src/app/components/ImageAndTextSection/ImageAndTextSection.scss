@@ -1,8 +1,29 @@
+@use "../../assets/style/mixins/breakpoints.scss";
+
 .image-and-text-section {
-  margin: 64px 104px;
+  padding: 4rem 104px;
+
+  @include breakpoints.respond-to-extra-large {
+    padding: 4rem 40px;
+  }
+
+  @include breakpoints.respond-to-small {
+    padding: 2rem 16px;
+  }
 
   &__title {
     text-align: center;
+    // margin-bottom: 3rem;
+
+    // @include breakpoints.respond-to-large {
+    //   // margin-bottom: 2.5rem;
+    //   font-size: 1.8rem;
+    // }
+
+    // @include breakpoints.respond-to-medium {
+    //   // margin-bottom: 2rem;
+    //   font-size: 1.5rem;
+    // }
   }
 
   &__content {
@@ -10,9 +31,59 @@
     align-items: center;
     gap: 80px;
 
+    @include breakpoints.respond-to-extra-large {
+      gap: 40px;
+    }
+
+    @include breakpoints.respond-to-large {
+      gap: 30px;
+    }
+
+    @include breakpoints.respond-to-medium {
+      gap: 20px;
+    }
+
+    @include breakpoints.respond-to-small {
+      flex-direction: column;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    &__image {
+      flex-shrink: 0;
+      width: 440px;
+      height: 600px;
+      object-fit: cover;
+      border-radius: 8px;
+
+      @include breakpoints.respond-to-extra-large {
+        width: 380px;
+        height: 520px;
+      }
+
+      @include breakpoints.respond-to-large {
+        width: 320px;
+        height: 440px;
+      }
+
+      @include breakpoints.respond-to-medium {
+        width: 280px;
+        height: 380px;
+      }
+
+      @include breakpoints.respond-to-small {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 400px;
+      }
+    }
+
     &__texts {
+      flex: 1;
+
       &__paragraph {
         margin: 0 0 40px 0;
+        line-height: 1.6;
       }
     }
   }

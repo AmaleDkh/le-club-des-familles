@@ -44,7 +44,7 @@ export const fetchHomepageContent = async () => {
 
     const page = await response.json();
 
-    console.log("page", page);
+    // console.log("page", page);
 
     return page;
   } catch (error) {
@@ -73,7 +73,7 @@ export const fetchAboutpageContent = async () => {
 
     const page = await response.json();
 
-    console.log("page", page);
+    // console.log("page", page);
 
     return page;
   } catch (error) {
@@ -97,7 +97,7 @@ export const fetchFinderspageContent = async () => {
 
     const page = await response.json();
 
-    console.log("page", page);
+    // console.log("page", page);
 
     return page;
   } catch (error) {
@@ -106,34 +106,21 @@ export const fetchFinderspageContent = async () => {
   }
 };
 
-// Get homepage content
-// export const fetchHomepageContent = async () => {
-//   try {
-//     const response = await fetch(`${apiUrl}/homepage`);
-
-//     if (!response.ok) {
-//       throw new Error("Erreur lors de la requête GET de la page");
-//     }
-
-//     const page = await response.json();
-
-//     return page;
-//   } catch (error) {
-//     console.error("Erreur lors de la récupération de la page", error);
-//     throw error;
-//   }
-// };
-
 // Get logo
 export const fetchLogo = async () => {
   try {
-    const response = await fetch(`${apiUrl}/logo`);
+    const response = await fetch(
+      `${apiStrapiUrl}/api/logo?populate=Logo`
+      // `${apiStrapiUrl}/api/logo?populate[Logo][populate][Logo]=true`
+    );
 
     if (!response.ok) {
       throw new Error("Erreur lors de la requête GET de la page");
     }
 
     const page = await response.json();
+
+    // console.log("page", page);
 
     return page;
   } catch (error) {

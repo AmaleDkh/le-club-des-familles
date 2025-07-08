@@ -60,7 +60,7 @@ function JoinTheClub({
             <p className="join-card__text">{diggerText}</p>
 
             <SecondaryButton
-              link="/"
+              link="/finders"
               label="Rejoindre le club"
               centerVersion=""
             />
@@ -84,7 +84,7 @@ function JoinTheClub({
             <p className="join-card__text">{partnerText}</p>
 
             <SecondaryButton
-              link="/"
+              link="/restaurants"
               label="Rejoindre le club"
               centerVersion=""
             />

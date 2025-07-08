@@ -11,10 +11,6 @@ import {
   fetchFinderspageContent,
 } from "@/utils/api";
 
-type Logo = {
-  logo_white_version: string;
-};
-
 type HeroBanner = {
   Title: string;
   Subtitle: string;
@@ -174,6 +170,10 @@ type ImageData = {
   };
 };
 
+type LogoContent = {
+  Logo: ImageData;
+};
+
 type HomeContent = {
   HeroBanner: HeroBanner;
   ThreeKeyFigures: ThreeKeyFigures;
@@ -276,45 +276,21 @@ export const useFinderspageData = () => {
   return finderspageContent;
 };
 
-// export const useHomepageData = () => {
-//   const [homepageContent, setHomepageContent] = useState<HomepageContent[]>([]);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const homepageContentData = await fetchHomepageContent();
-
-//         const homepage = homepageContentData.map(
-//           (HomepageContent: { acf: HomepageContent }) => HomepageContent.acf
-//         );
-
-//         setHomepageContent(homepage);
-//       } catch (error) {
-//         console.error(
-//           "Une erreur est survenue lors de la récupération de la section",
-//           error
-//         );
-//       }
-//     };
-//     fetchData();
-//   }, []);
-
-//   return homepageContent;
-// };
-
 export const useLogoData = () => {
-  const [LogoContent, setLogoContent] = useState<Logo[]>([]);
+  const [logoContent, setLogoContent] = useState<LogoContent | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const LogoContentData = await fetchLogo();
 
-        const logo = LogoContentData.map(
-          (LogoContent: { acf: Logo }) => LogoContent.acf
-        );
+        console.log("LogoContentData", LogoContentData);
 
-        setLogoContent(logo);
+        const content = LogoContentData.data;
+
+        console.log("content", content);
+
+        setLogoContent(content);
       } catch (error) {
         console.error(
           "Une erreur est survenue lors de la récupération de la section",
@@ -325,5 +301,5 @@ export const useLogoData = () => {
     fetchData();
   }, []);
 
-  return LogoContent;
+  return logoContent;
 };

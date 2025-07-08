@@ -1,29 +1,25 @@
-// Next element
-// import Image from "next/image";
-
-// Component
+// Components
+import Logo from "../Logo/Logo";
 import NavigationMenu from "../NavigationMenu/NavigationMenu";
 
 // Style
 import "./Footer.scss";
 
-// Hook
-// import { useLogoData } from "@/hooks/useData";
-
 function Footer() {
-  // const LogoContent = useLogoData();
-
   return (
     <footer className="footer">
-      {/* {LogoContent?.[0] && (
-        <Image
-          src={LogoContent[0].logo_white_version}
-          alt=""
-          width={200}
-          height={200}
-        />
-      )} */}
-      <NavigationMenu />
+      <div className="footer__content">
+        <div className="footer__content__main">
+          <Logo />
+
+          <NavigationMenu />
+        </div>
+
+        <span className="footer__content__copyright">
+          © {new Date().getFullYear()} Le Club des Familles. Tous droits
+          réservés.
+        </span>
+      </div>
     </footer>
   );
 }

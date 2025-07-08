@@ -1,15 +1,51 @@
+@use "../../assets/style/mixins/breakpoints.scss";
 @use "../../assets/style/Colors.scss" as colors;
 
 .footer {
-  padding: 24px 104px;
   background-color: colors.$orange-color;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 8px 104px;
 
-  &__navigation-part {
+  @include breakpoints.respond-to-extra-large {
+    padding: 8px 40px;
+  }
+
+  @include breakpoints.respond-to-medium {
+    padding: 8px 16px;
+  }
+
+  &__content {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 80px;
+    text-align: left;
+
+    &__main {
+      width: -webkit-fill-available;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include breakpoints.respond-to-medium {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+        text-align: center;
+      }
+    }
+
+    &__copyright {
+      color: white;
+      white-space: nowrap;
+      text-align: right;
+      padding: 0;
+
+      @include breakpoints.respond-to-medium {
+        text-align: center;
+        white-space: normal;
+        max-width: 100%;
+        line-height: 1.5;
+      }
+    }
   }
 }

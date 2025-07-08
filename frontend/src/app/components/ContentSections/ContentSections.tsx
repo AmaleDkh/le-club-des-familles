@@ -2,6 +2,7 @@
 
 // Component
 import ImagesAndContentSection from "../ImagesAndContentSection/ImagesAndContentSection";
+import Logo from "../Logo/Logo";
 
 // Style
 import "./ContentSections.scss";
@@ -56,7 +57,7 @@ function ContentSections({
           />
         </div>
 
-        {/* Logo */}
+        <Logo className="logo-center" />
 
         <div className="content-part">
           <ImagesAndContentSection
