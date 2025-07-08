@@ -1,0 +1,121 @@
+@use "../../assets/style/mixins/breakpoints.scss";
+@use "../../assets/style/Colors.scss" as colors;
+
+.two-same-images-and-text-section {
+  position: relative;
+  overflow: hidden;
+
+  padding: 4rem 104px;
+
+  @include breakpoints.respond-to-extra-large {
+    padding: 4rem 40px;
+  }
+
+  @include breakpoints.respond-to-medium {
+    padding: 2rem 16px;
+  }
+
+  &__container {
+    max-width: 1280px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+
+    @include breakpoints.respond-to-medium {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    padding: 2rem;
+
+    @include breakpoints.respond-to-medium {
+      gap: 1rem;
+    }
+  }
+
+  &__description {
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__left,
+  &__right {
+    position: relative;
+  }
+
+  &__image-wrapper {
+    // border-radius: 1rem;
+    overflow: hidden;
+    // box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    height: 400px;
+
+    &--left {
+      margin-top: 2rem;
+
+      @media (min-width: 768px) {
+        margin-top: 0;
+      }
+    }
+
+    &--right {
+      margin-top: 2rem;
+
+      @media (min-width: 768px) {
+        margin-top: 5rem;
+      }
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    z-index: 2;
+
+    @media (max-width: 768px) {
+      width: 60px;
+      height: 60px;
+    }
+
+    &--bottom {
+      bottom: -20px;
+      left: 20px;
+
+      @media (max-width: 768px) {
+        bottom: -10px;
+        left: 10px;
+      }
+    }
+
+    &--top {
+      top: -20px;
+      right: 20px;
+
+      @media (max-width: 768px) {
+        top: -10px;
+        right: 10px;
+      }
+    }
+  }
+
+  &__icon-img {
+    width: 60%;
+    height: auto;
+  }
+}

@@ -8,6 +8,7 @@ import {
   fetchHomepageContent,
   fetchLogo,
   fetchAboutpageContent,
+  fetchFinderspageContent,
 } from "@/utils/api";
 
 type Logo = {
@@ -133,6 +134,13 @@ type ImageSeparator = {
   ImageSeparator: ImageData;
 };
 
+type TwoSameImagesAndTextSection = {
+  SectionTitle: string;
+  Paragraph: string;
+  FirstImage: ImageData;
+  SecondImage: ImageData;
+};
+
 type ImageFormat = {
   url: string;
   width: number;
@@ -165,6 +173,10 @@ type HomeContent = {
 
 type AboutContent = {
   TeamSection: TeamSection;
+};
+
+type FindersContent = {
+  TwoSameImagesAndTextSection: TwoSameImagesAndTextSection;
 };
 
 export const useHomepageData = () => {
@@ -219,6 +231,33 @@ export const useAboutpageData = () => {
   }, []);
 
   return aboutpageContent;
+};
+
+export const useFinderspageData = () => {
+  const [finderspageContent, setFinderspageContent] =
+    useState<FindersContent | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const finderspageContentData = await fetchFinderspageContent();
+
+        const content = finderspageContentData.data;
+
+        // console.log("content", content);
+
+        setFinderspageContent(content);
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return finderspageContent;
 };
 
 // export const useHomepageData = () => {

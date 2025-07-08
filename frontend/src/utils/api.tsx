@@ -53,14 +53,38 @@ export const fetchHomepageContent = async () => {
   }
 };
 
-// Get homepage content
+// Get about page content
 export const fetchAboutpageContent = async () => {
   try {
     const response = await fetch(
       `${apiStrapiUrl}/api/aboutpage?` +
         `populate[TeamSection][populate][FirstMemberPhoto]=true&` +
         `populate[TeamSection][populate][SecondMemberPhoto]=true&` +
-        `populate[TeamSection][populate][ThirdMemberPhoto]=true&`
+        `populate[TeamSection][populate][ThirdMemberPhoto]=true`
+    );
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la requête GET de la page");
+    }
+
+    const page = await response.json();
+
+    console.log("page", page);
+
+    return page;
+  } catch (error) {
+    console.error("Erreur lors de la récupération de la page", error);
+    throw error;
+  }
+};
+
+// Get finders page content
+export const fetchFinderspageContent = async () => {
+  try {
+    const response = await fetch(
+      `${apiStrapiUrl}/api/finderspage?` +
+        `populate[TwoSameImagesAndTextSection][populate][FirstImage]=true&` +
+        `populate[TwoSameImagesAndTextSection][populate][SecondImage]=true&`
     );
 
     if (!response.ok) {
