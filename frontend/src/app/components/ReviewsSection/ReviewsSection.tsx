@@ -103,7 +103,7 @@ function ReviewsSection({ title }: ReviewsSectionProps) {
                 <div className="reviews-section__rating">
                   {renderStars(review.rating)}
                 </div>
-                <p className="reviews-section__comment">"{review.comment}"</p>
+                <p className="reviews-section__comment">{review.comment}</p>
                 <div className="reviews-section__author">
                   {review.photo && (
                     <Image
