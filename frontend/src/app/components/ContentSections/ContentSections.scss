@@ -1,0 +1,19 @@
+@use "../../assets/style/mixins/breakpoints.scss";
+
+.content-sections {
+  padding: 4rem 104px;
+
+  @include breakpoints.respond-to-extra-large {
+    padding: 4rem 40px;
+  }
+
+  @include breakpoints.respond-to-medium {
+    padding: 2rem 16px;
+  }
+
+  .content-part {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

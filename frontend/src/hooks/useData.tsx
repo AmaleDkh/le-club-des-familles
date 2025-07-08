@@ -141,6 +141,21 @@ type TwoSameImagesAndTextSection = {
   SecondImage: ImageData;
 };
 
+type ImagesAndContentSection = {
+  FirstTitle: string;
+  FirstParagraph: string;
+  FirstImage: ImageData;
+  SecondTitle: string;
+  SecondParagraph: string;
+  SecondImage: ImageData;
+  ThirdTitle: string;
+  ThirdParagraph: string;
+  ThirdImage: ImageData;
+  FourthTitle: string;
+  FourthParagraph: string;
+  FourthImage: ImageData;
+};
+
 type ImageFormat = {
   url: string;
   width: number;
@@ -173,6 +188,7 @@ type HomeContent = {
 
 type AboutContent = {
   TeamSection: TeamSection;
+  ImagesAndContentSection: ImagesAndContentSection;
 };
 
 type FindersContent = {

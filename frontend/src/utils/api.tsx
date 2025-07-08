@@ -60,7 +60,11 @@ export const fetchAboutpageContent = async () => {
       `${apiStrapiUrl}/api/aboutpage?` +
         `populate[TeamSection][populate][FirstMemberPhoto]=true&` +
         `populate[TeamSection][populate][SecondMemberPhoto]=true&` +
-        `populate[TeamSection][populate][ThirdMemberPhoto]=true`
+        `populate[TeamSection][populate][ThirdMemberPhoto]=true&` +
+        `populate[ImagesAndContentSection][populate][FirstImage]=true&` +
+        `populate[ImagesAndContentSection][populate][SecondImage]=true&` +
+        `populate[ImagesAndContentSection][populate][ThirdImage]=true&` +
+        `populate[ImagesAndContentSection][populate][FourthImage]=true`
     );
 
     if (!response.ok) {
@@ -84,7 +88,7 @@ export const fetchFinderspageContent = async () => {
     const response = await fetch(
       `${apiStrapiUrl}/api/finderspage?` +
         `populate[TwoSameImagesAndTextSection][populate][FirstImage]=true&` +
-        `populate[TwoSameImagesAndTextSection][populate][SecondImage]=true&`
+        `populate[TwoSameImagesAndTextSection][populate][SecondImage]=true`
     );
 
     if (!response.ok) {

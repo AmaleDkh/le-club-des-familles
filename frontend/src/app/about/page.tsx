@@ -7,6 +7,7 @@ import BadgesSection from "../components/BadgesSection/BadgesSection";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 import TeamSection from "../components/TeamSection/TeamSection";
+import ContentSections from "../components/ContentSections/ContentSections";
 
 // Hooks
 import { useHomepageData, useAboutpageData } from "@/hooks/useData";
@@ -18,6 +19,39 @@ function AboutPage() {
   return (
     <Layout>
       <PageTitle title="LE CLUB DES FAMILLES, C’EST QUOI ?" paragraph="" />
+
+      <ContentSections
+        firstTitle={aboutpageContent?.ImagesAndContentSection.FirstTitle || ""}
+        firstParagraph={
+          aboutpageContent?.ImagesAndContentSection.FirstParagraph || ""
+        }
+        firstImage={
+          aboutpageContent?.ImagesAndContentSection.FirstImage.url || ""
+        }
+        secondTitle={
+          aboutpageContent?.ImagesAndContentSection.SecondTitle || ""
+        }
+        secondParagraph={
+          aboutpageContent?.ImagesAndContentSection.SecondParagraph || ""
+        }
+        secondImage={
+          aboutpageContent?.ImagesAndContentSection.SecondImage.url || ""
+        }
+        thirdTitle={aboutpageContent?.ImagesAndContentSection.ThirdTitle || ""}
+        thirdParagraph={
+          aboutpageContent?.ImagesAndContentSection.ThirdParagraph || ""
+        }
+        thirdImage={
+          aboutpageContent?.ImagesAndContentSection.ThirdImage.url || ""
+        }
+        fourthTitle={aboutpageContent?.ImagesAndContentSection.ThirdTitle || ""}
+        fourthParagraph={
+          aboutpageContent?.ImagesAndContentSection.ThirdParagraph || ""
+        }
+        fourthImage={
+          aboutpageContent?.ImagesAndContentSection.FourthImage.url || ""
+        }
+      />
 
       <TeamSection title={aboutpageContent?.TeamSection.SectionTitle || ""} />
 
