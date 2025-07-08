@@ -4,7 +4,11 @@
 import { useEffect, useState } from "react";
 
 // API Calls
-import { fetchHomepageContent, fetchLogo } from "@/utils/api";
+import {
+  fetchHomepageContent,
+  fetchLogo,
+  fetchAboutpageContent,
+} from "@/utils/api";
 
 type Logo = {
   logo_white_version: string;
@@ -75,6 +79,22 @@ type FavoriteLocations = {
   SectionTitle: string;
 };
 
+type TeamSection = {
+  SectionTitle: string;
+  FirstMemberName: string;
+  FirstMemberRole: string;
+  FirstMemberBiography: string;
+  FirstMemberPhoto: ImageData;
+  SecondMemberName: string;
+  SecondMemberRole: string;
+  SecondMemberBiography: string;
+  SecondMemberPhoto: ImageData;
+  ThirdMemberName: string;
+  ThirdMemberRole: string;
+  ThirdMemberBiography: string;
+  ThirdMemberPhoto: ImageData;
+};
+
 type ImageFormat = {
   url: string;
   width: number;
@@ -103,6 +123,10 @@ type HomeContent = {
   FavoriteLocations: FavoriteLocations;
 };
 
+type AboutContent = {
+  TeamSection: TeamSection;
+};
+
 export const useHomepageData = () => {
   const [homepageContent, setHomepageContent] = useState<HomeContent | null>(
     null
@@ -127,6 +151,34 @@ export const useHomepageData = () => {
   }, []);
 
   return homepageContent;
+};
+
+export const useAboutpageData = () => {
+  const [aboutpageContent, setAboutpageContent] = useState<AboutContent | null>(
+    null
+  );
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const aboutpageContentData = await fetchAboutpageContent();
+
+        const content = aboutpageContentData.data;
+
+        // console.log("content", content);
+
+        setAboutpageContent(content);
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return aboutpageContent;
 };
 
 // export const useHomepageData = () => {

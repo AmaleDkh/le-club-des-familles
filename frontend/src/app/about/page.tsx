@@ -6,16 +6,20 @@ import PageTitle from "../components/PageTitle/PageTitle";
 import BadgesSection from "../components/BadgesSection/BadgesSection";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
+import TeamSection from "../components/TeamSection/TeamSection";
 
-// Hook
-import { useHomepageData } from "@/hooks/useData";
+// Hooks
+import { useHomepageData, useAboutpageData } from "@/hooks/useData";
 
 function AboutPage() {
   const homepageContent = useHomepageData();
+  const aboutpageContent = useAboutpageData();
 
   return (
     <Layout>
       <PageTitle title="LE CLUB DES FAMILLES, C’EST QUOI ?" paragraph="" />
+
+      <TeamSection title={aboutpageContent?.TeamSection.SectionTitle || ""} />
 
       <BadgesSection
         title={homepageContent?.Badges.SectionTitle || ""}
