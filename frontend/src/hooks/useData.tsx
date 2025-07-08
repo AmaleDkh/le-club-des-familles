@@ -95,6 +95,44 @@ type TeamSection = {
   ThirdMemberPhoto: ImageData;
 };
 
+type Reviews = {
+  SectionTitle: string;
+  FirstReviewerName: string;
+  FirstReviewerLocation: string;
+  FirstReviewerPhoto: ImageData;
+  FirstReviewerRating: number;
+  FirstReviewerComment: string;
+  SecondReviewerName: string;
+  SecondReviewerLocation: string;
+  SecondReviewerPhoto: ImageData;
+  SecondReviewerRating: number;
+  SecondReviewerComment: string;
+  ThirdReviewerName: string;
+  ThirdReviewerLocation: string;
+  ThirdReviewerPhoto: ImageData;
+  ThirdReviewerRating: number;
+  ThirdReviewerComment: string;
+  FourthReviewerName: string;
+  FourthReviewerLocation: string;
+  FourthReviewerPhoto: ImageData;
+  FourthReviewerRating: number;
+  FourthReviewerComment: string;
+  FifthReviewerName: string;
+  FifthReviewerLocation: string;
+  FifthReviewerPhoto: ImageData;
+  FifthReviewerRating: number;
+  FifthReviewerComment: string;
+  SixthReviewerName: string;
+  SixthReviewerLocation: string;
+  SixthReviewerPhoto: ImageData;
+  SixthReviewerRating: number;
+  SixthReviewerComment: string;
+};
+
+type ImageSeparator = {
+  ImageSeparator: ImageData;
+};
+
 type ImageFormat = {
   url: string;
   width: number;
@@ -121,6 +159,8 @@ type HomeContent = {
   Concept: Concept;
   Badges: Badges;
   FavoriteLocations: FavoriteLocations;
+  Reviews: Reviews;
+  ImageSeparator: ImageSeparator[];
 };
 
 type AboutContent = {

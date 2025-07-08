@@ -9,7 +9,8 @@ import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSe
 import BadgesSection from "./components/BadgesSection/BadgesSection";
 import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
 import JoinTheClub from "./components/JoinTheClub/JoinTheClub";
-// import ImageSeparator from "./components/ImageSeparator/ImageSeparator";
+import ReviewsSection from "./components/ReviewsSection/ReviewsSection";
+import ImageSeparator from "./components/ImageSeparator/ImageSeparator";
 // import InstagramFeed from "./components/InstagramFeed/InstagramFeed";
 
 // Hook
@@ -71,14 +72,26 @@ export default function Home() {
             fourthBadgeParagraph={homepageContent?.Badges.FourthBadgeText || ""}
           />
 
-          {/* <ImageSeparator imageUrl="" imageAlt="" /> */}
+          <ImageSeparator
+            imageUrl={
+              homepageContent?.ImageSeparator?.[0].ImageSeparator.url || ""
+            }
+            imageAlt=""
+          />
 
           <FavoriteLocations
             title={homepageContent?.FavoriteLocations.SectionTitle || ""}
             buttonVersion={true}
           />
 
-          {/* <ImageSeparator imageUrl="" imageAlt="" /> */}
+          <ReviewsSection title={homepageContent?.Reviews.SectionTitle || ""} />
+
+          <ImageSeparator
+            imageUrl={
+              homepageContent?.ImageSeparator?.[1].ImageSeparator.url || ""
+            }
+            imageAlt=""
+          />
 
           <JoinTheClub
             title={homepageContent?.JoinTheClub?.SectionTitle || ""}

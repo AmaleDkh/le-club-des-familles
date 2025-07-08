@@ -21,6 +21,11 @@ const nextConfig = {
         hostname: "via.placeholder.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "amale.manachem.fr",
+        pathname: "/**",
+      },
     ],
     domains: ["amale.manachem.fr"],
   },

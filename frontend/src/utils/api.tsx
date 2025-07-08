@@ -28,7 +28,14 @@ export const fetchHomepageContent = async () => {
         `populate[Badges][populate][SecondBadgeImage]=true&` +
         `populate[Badges][populate][ThirdBadgeImage]=true&` +
         `populate[Badges][populate][FourthBadgeImage]=true&` +
-        `populate[FavoriteLocations]=true`
+        `populate[FavoriteLocations]=true&` +
+        `populate[Reviews][populate][FirstReviewerPhoto]=true&` +
+        `populate[Reviews][populate][SecondReviewerPhoto]=true&` +
+        `populate[Reviews][populate][ThirdReviewerPhoto]=true&` +
+        `populate[Reviews][populate][FourthReviewerPhoto]=true&` +
+        `populate[Reviews][populate][FifthReviewerPhoto]=true&` +
+        `populate[Reviews][populate][SixthReviewerPhoto]=true&` +
+        `populate[ImageSeparator][populate][ImageSeparator]=true`
     );
 
     if (!response.ok) {
@@ -37,7 +44,7 @@ export const fetchHomepageContent = async () => {
 
     const page = await response.json();
 
-    // console.log("page", page);
+    console.log("page", page);
 
     return page;
   } catch (error) {

@@ -1,0 +1,95 @@
+@use "../../assets/style/mixins/breakpoints.scss";
+@use "../../assets/style/Colors.scss" as colors;
+
+.reviews-section {
+  padding: 4rem 104px;
+
+  @include breakpoints.respond-to-extra-large {
+    padding: 4rem 40px;
+  }
+
+  @include breakpoints.respond-to-medium {
+    padding: 2rem 16px;
+  }
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    // margin-bottom: 3rem;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include breakpoints.respond-to-large {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoints.respond-to-small {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__card {
+    height: 100%;
+  }
+
+  &__card-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  &__rating {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+  }
+
+  &__comment {
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: auto;
+  }
+
+  &__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__author-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__author-name {
+    font-family: "Gagalin", sans-serif;
+    color: colors.$orange-color;
+    margin: 0;
+  }
+
+  &__author-location {
+    margin: 0;
+  }
+
+  .star-filled,
+  .star-empty {
+    transition: all 0.2s ease;
+  }
+}

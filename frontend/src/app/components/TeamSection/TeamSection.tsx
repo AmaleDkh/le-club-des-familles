@@ -4,6 +4,7 @@ const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
 import Image from "next/image";
 
 // Components
+import SectionTitle from "../SectionTitle/SectionTitle";
 import Card from "../Card/Card";
 import CardContent from "../CardContent/CardContent";
 
@@ -50,7 +51,11 @@ function TeamSection({ title }: TeamSectionProps) {
     <section className="team-section">
       <div className="team-section__container">
         <div className="team-section__header">
-          <h2 className="team-section__title">{title}</h2>
+          <SectionTitle
+            title={title}
+            colorVersion="section-title--version-with-orange-color"
+            versionWithTextAlign="section-title--version-with-text-align"
+          />
         </div>
 
         <div className="team-section__grid">
