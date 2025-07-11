@@ -6,6 +6,7 @@ import PageTitle from "../components/PageTitle/PageTitle";
 import TwoSameImagesAndTextSection from "../components/TwoSameImagesAndTextSection/TwoSameImagesAndTextSection";
 import ReviewsSection from "../components/ReviewsSection/ReviewsSection";
 import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
+import ContactForm from "../components/ContactForm/ContactForm";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hooks
@@ -43,6 +44,8 @@ function FindersPage() {
         title={homepageContent?.FavoriteLocations.SectionTitle || ""}
         buttonVersion={true}
       />
+
+      <ContactForm />
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>

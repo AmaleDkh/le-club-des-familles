@@ -3,12 +3,14 @@
 // Components
 import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
+import AllThePlaces from "../components/AllThePlaces/AllThePlaces";
 import BadgesSection from "../components/BadgesSection/BadgesSection";
 import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
-// import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
+import ReviewsSection from "../components/ReviewsSection/ReviewsSection";
+import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
+import ContactForm from "../components/ContactForm/ContactForm";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
-import AllThePlaces from "../components/AllThePlaces/AllThePlaces";
 
 // Hook
 import { useHomepageData } from "@/hooks/useData";
@@ -43,6 +45,13 @@ function PlacesPage() {
         buttonVersion={true}
       />
 
+      <ReviewsSection title={homepageContent?.Reviews.SectionTitle || ""} />
+
+      <ImageSeparator
+        imageUrl={homepageContent?.ImageSeparator?.[0].ImageSeparator.url || ""}
+        imageAlt=""
+      />
+
       <JoinTheClub
         title={homepageContent?.JoinTheClub?.SectionTitle || ""}
         diggerImage={homepageContent?.JoinTheClub?.DiggerImage.url || ""}
@@ -54,6 +63,8 @@ function PlacesPage() {
         partnerTitle={homepageContent?.JoinTheClub?.PartnerTitle || ""}
         partnerText={homepageContent?.JoinTheClub?.PartnerText || ""}
       />
+
+      <ContactForm />
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>

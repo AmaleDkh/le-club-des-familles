@@ -11,8 +11,8 @@ import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations"
 import JoinTheClub from "./components/JoinTheClub/JoinTheClub";
 import ReviewsSection from "./components/ReviewsSection/ReviewsSection";
 import ImageSeparator from "./components/ImageSeparator/ImageSeparator";
+import ContactForm from "./components/ContactForm/ContactForm";
 // import InstagramFeed from "./components/InstagramFeed/InstagramFeed";
-
 // import TextImageSection from "./components/TextImageSection/TextImageSection";
 
 // Hook
@@ -24,12 +24,6 @@ export default function Home() {
   return (
     <>
       <Layout>
-        {/* <TextImageSection
-          title="Des expériences inoubliables"
-          description="Notre club vous propose de découvrir des lieux exceptionnels, soigneusement sélectionnés pour offrir le meilleur des expériences familiales. Nos membres bénéficient d'un accès privilégié à des établissements vérifiés et approuvés par notre communauté."
-          mainImageUrl="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
-          smallImageUrl="https://images.unsplash.com/photo-1582562124811-c09040d0a901?auto=format&fit=crop&w=400&q=80"
-        /> */}
         <HeroBanner
           title={homepageContent?.HeroBanner.Title || ""}
           subtitle={homepageContent?.HeroBanner.Subtitle || ""}
@@ -114,6 +108,8 @@ export default function Home() {
             partnerTitle={homepageContent?.JoinTheClub?.PartnerTitle || ""}
             partnerText={homepageContent?.JoinTheClub?.PartnerText || ""}
           />
+
+          <ContactForm />
 
           {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
         </>

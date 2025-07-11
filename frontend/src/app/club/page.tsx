@@ -6,6 +6,7 @@ import PageTitle from "../components/PageTitle/PageTitle";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
 import BadgesSection from "../components/BadgesSection/BadgesSection";
 import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
+import ContactForm from "../components/ContactForm/ContactForm";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hook
@@ -53,6 +54,8 @@ function JoinTheClubPage() {
         title={homepageContent?.FavoriteLocations.SectionTitle || ""}
         buttonVersion={true}
       />
+
+      <ContactForm />
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>

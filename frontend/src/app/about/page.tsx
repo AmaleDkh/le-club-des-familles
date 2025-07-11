@@ -5,9 +5,10 @@ import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
 import BadgesSection from "../components/BadgesSection/BadgesSection";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
-// import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 import TeamSection from "../components/TeamSection/TeamSection";
 import ContentSections from "../components/ContentSections/ContentSections";
+import ContactForm from "../components/ContactForm/ContactForm";
+// import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hooks
 import { useHomepageData, useAboutpageData } from "@/hooks/useData";
@@ -82,6 +83,8 @@ function AboutPage() {
         partnerTitle={homepageContent?.JoinTheClub?.PartnerTitle || ""}
         partnerText={homepageContent?.JoinTheClub?.PartnerText || ""}
       />
+
+      <ContactForm />
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>
