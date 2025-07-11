@@ -1,6 +1,7 @@
-// Next & React elements
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
+"use client";
+
+// React elements
+import { useState, useEffect } from "react";
 import {
   Search,
   ChevronDown,
@@ -10,9 +11,6 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 // Style
 import "./AllThePlaces.scss";
@@ -27,13 +25,16 @@ import {
 } from "../../../utils/api";
 
 function AllThePlaces() {
-  // États pour la recherche et les filtres
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [currentMobileIndex, setCurrentMobileIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState<{
+    [key: string]: number;
+  }>({});
 
-  // États pour les données
   const [allPlaces, setAllPlaces] = useState<any[]>([]);
   const [filteredPlaces, setFilteredPlaces] = useState<any[]>([]);
   const [babyBadges, setBabyBadges] = useState<any[]>([]);
@@ -41,7 +42,16 @@ function AllThePlaces() {
   const [adultBadges, setAdultBadges] = useState<any[]>([]);
   const [valueBadges, setValueBadges] = useState<any[]>([]);
 
-  // Chargement initial des données
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 767);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   useEffect(() => {
     const fetchAllData = async () => {
       try {
@@ -76,12 +86,10 @@ function AllThePlaces() {
     fetchAllData();
   }, []);
 
-  // Filtrage des lieux
   useEffect(() => {
     const applyFilters = () => {
       let results = [...allPlaces];
 
-      // Filtre de recherche
       if (searchQuery.trim()) {
         const query = searchQuery.toLowerCase().trim();
         results = results.filter(
@@ -92,7 +100,6 @@ function AllThePlaces() {
         );
       }
 
-      // Filtres de badges
       if (activeFilters.length > 0) {
         results = results.filter((place) => {
           return activeFilters.some((filterName) => {
@@ -128,6 +135,8 @@ function AllThePlaces() {
       }
 
       setFilteredPlaces(results);
+
+      setCurrentMobileIndex(0);
     };
 
     applyFilters();
@@ -155,6 +164,23 @@ function AllThePlaces() {
 
   const clearAllFilters = () => {
     setActiveFilters([]);
+    setCurrentMobileIndex(0);
+  };
+
+  const nextMobileCard = () => {
+    if (currentMobileIndex < filteredPlaces.length - 1) {
+      setCurrentMobileIndex(currentMobileIndex + 1);
+    }
+  };
+
+  const prevMobileCard = () => {
+    if (currentMobileIndex > 0) {
+      setCurrentMobileIndex(currentMobileIndex - 1);
+    }
+  };
+
+  const goToMobileCard = (index: number) => {
+    setCurrentMobileIndex(index);
   };
 
   const badgeTypes = [
@@ -183,44 +209,6 @@ function AllThePlaces() {
       color: "all-the-places__badge--value",
     },
   ];
-
-  const CustomPrevArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <button
-        className="all-the-places__carousel-arrow all-the-places__carousel-arrow--prev"
-        onClick={onClick}
-        aria-label="Image précédente"
-      >
-        <ChevronLeft size={24} />
-      </button>
-    );
-  };
-
-  const CustomNextArrow = (props: any) => {
-    const { onClick } = props;
-    return (
-      <button
-        className="all-the-places__carousel-arrow all-the-places__carousel-arrow--next"
-        onClick={onClick}
-        aria-label="Image suivante"
-      >
-        <ChevronRight size={24} />
-      </button>
-    );
-  };
-
-  const carouselSettings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <CustomPrevArrow />,
-    nextArrow: <CustomNextArrow />,
-    adaptiveHeight: false,
-    autoplay: false,
-  };
 
   return (
     <div className="all-the-places">
@@ -356,80 +344,186 @@ function AllThePlaces() {
             </div>
           </div>
         ) : filteredPlaces.length > 0 ? (
-          <div className="all-the-places__grid">
-            {filteredPlaces.map((place: any) => {
-              const images = place.fields.Images || [];
+          <>
+            {/* Version Desktop - Grille */}
+            <div className="all-the-places__grid all-the-places__grid--desktop">
+              {filteredPlaces.map((place: any) => {
+                const images = place.fields.Images || [];
 
-              return (
-                <div key={place.id} className="all-the-places__card">
-                  <div className="all-the-places__card-image-wrapper">
-                    {images.length > 0 ? (
-                      <Slider
-                        {...carouselSettings}
-                        className="all-the-places__carousel"
-                      >
-                        {images.map((image: any, index: number) => (
-                          <div
-                            key={index}
-                            className="all-the-places__carousel-slide"
-                          >
-                            <Image
-                              src={image.url}
-                              alt={`${place.fields.Name} - Image ${index + 1}`}
-                              className="all-the-places__card-image"
-                              width={400}
-                              height={400}
-                            />
-                          </div>
-                        ))}
-                      </Slider>
-                    ) : (
-                      <div className="all-the-places__card-image-placeholder">
-                        <Image
-                          src="https://via.placeholder.com/400x300?text=Aucune+image"
-                          alt="Aucune image disponible"
-                          className="all-the-places__card-image"
-                          width={400}
-                          height={400}
-                        />
+                return (
+                  <div key={place.id} className="all-the-places__card">
+                    <div className="all-the-places__card-image-wrapper">
+                      {images.length > 0 ? (
+                        <div className="all-the-places__image-container">
+                          <img
+                            src={
+                              images[currentImageIndex[place.id] || 0]
+                                ? images[currentImageIndex[place.id] || 0].url
+                                : images[0].url
+                            }
+                            alt={place.fields.Name}
+                            className="all-the-places__card-image"
+                          />
+                          {images.length > 1 && (
+                            <div className="all-the-places__image-indicators">
+                              {images.map((_: any, index: number) => (
+                                <button
+                                  key={index}
+                                  className={`all-the-places__image-indicator ${
+                                    (currentImageIndex[place.id] || 0) === index
+                                      ? "all-the-places__image-indicator--active"
+                                      : ""
+                                  }`}
+                                  onClick={() =>
+                                    setCurrentImageIndex((prev) => ({
+                                      ...prev,
+                                      [place.id]: index,
+                                    }))
+                                  }
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="all-the-places__card-image-placeholder">
+                          <span>Aucune image disponible</span>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="all-the-places__card-content">
+                      <h3 className="all-the-places__card-title">
+                        {place.fields.Name}
+                      </h3>
+
+                      <div className="all-the-places__card-address">
+                        <MapPin className="all-the-places__card-address-icon" />
+                        <span className="all-the-places__card-address-text">
+                          {place.fields.Address}
+                        </span>
                       </div>
-                    )}
+                    </div>
                   </div>
+                );
+              })}
+            </div>
 
-                  <div className="all-the-places__card-content">
-                    <h3 className="all-the-places__card-title">
-                      {place.fields.Name}
-                    </h3>
+            <div className="all-the-places__mobile-carousel">
+              <div className="all-the-places__mobile-carousel-container">
+                <button
+                  className="all-the-places__mobile-nav all-the-places__mobile-nav--prev"
+                  onClick={prevMobileCard}
+                  disabled={currentMobileIndex === 0}
+                >
+                  <ChevronLeft size={24} />
+                </button>
 
-                    <div className="all-the-places__card-address">
-                      <MapPin className="all-the-places__card-address-icon" />
-                      <span className="all-the-places__card-address-text">
-                        {place.fields.Address}
-                      </span>
-                    </div>
+                <div className="all-the-places__mobile-carousel-wrapper">
+                  <div
+                    className="all-the-places__mobile-carousel-track"
+                    style={{
+                      transform: `translateX(-${currentMobileIndex * 100}%)`,
+                    }}
+                  >
+                    {filteredPlaces.map((place: any, index: number) => {
+                      const images = place.fields.Images || [];
 
-                    <div className="all-the-places__card-badges">
-                      <div className="all-the-places__card-badges-list">
-                        {badgeTypes.map((type: any) => {
-                          const badgeIds = place.fields[type.name] || [];
-                          return type.badges
-                            .filter((badge: any) => badgeIds.includes(badge.id))
-                            .map((badge: any) => (
-                              <span
-                                key={badge.id}
-                                className={`all-the-places__badge ${type.color}`}
-                              >
-                                {badge.fields.Name}
+                      return (
+                        <div
+                          key={place.id}
+                          className="all-the-places__mobile-card"
+                        >
+                          <div className="all-the-places__card-image-wrapper">
+                            {images.length > 0 ? (
+                              <div className="all-the-places__image-container">
+                                <img
+                                  src={
+                                    images[currentImageIndex[place.id] || 0]
+                                      ? images[currentImageIndex[place.id] || 0]
+                                          .url
+                                      : images[0].url
+                                  }
+                                  alt={place.fields.Name}
+                                  className="all-the-places__card-image"
+                                />
+                                {images.length > 1 && (
+                                  <div className="all-the-places__image-indicators">
+                                    {images.map((_: any, index: number) => (
+                                      <button
+                                        key={index}
+                                        className={`all-the-places__image-indicator ${
+                                          (currentImageIndex[place.id] || 0) ===
+                                          index
+                                            ? "all-the-places__image-indicator--active"
+                                            : ""
+                                        }`}
+                                        onClick={() =>
+                                          setCurrentImageIndex((prev) => ({
+                                            ...prev,
+                                            [place.id]: index,
+                                          }))
+                                        }
+                                      />
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              <div className="all-the-places__card-image-placeholder">
+                                <span>Aucune image disponible</span>
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="all-the-places__card-content">
+                            <h3 className="all-the-places__card-title">
+                              {place.fields.Name}
+                            </h3>
+
+                            <div className="all-the-places__card-address">
+                              <MapPin className="all-the-places__card-address-icon" />
+                              <span className="all-the-places__card-address-text">
+                                {place.fields.Address}
                               </span>
-                            ));
-                        })}
-                      </div>
-                    </div>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              );
-            })}
-          </div>
+
+                <button
+                  className="all-the-places__mobile-nav all-the-places__mobile-nav--next"
+                  onClick={nextMobileCard}
+                  disabled={currentMobileIndex === filteredPlaces.length - 1}
+                >
+                  <ChevronRight size={24} />
+                </button>
+              </div>
+              {/* 
+              <div className="all-the-places__mobile-indicators">
+                {filteredPlaces.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`all-the-places__mobile-indicator ${
+                      index === currentMobileIndex
+                        ? "all-the-places__mobile-indicator--active"
+                        : ""
+                    }`}
+                    onClick={() => goToMobileCard(index)}
+                  />
+                ))}
+              </div> */}
+
+              <div className="all-the-places__mobile-counter">
+                <span>
+                  {currentMobileIndex + 1} / {filteredPlaces.length}
+                </span>
+              </div>
+            </div>
+          </>
         ) : (
           <div className="all-the-places__empty">
             <p className="all-the-places__empty-title">

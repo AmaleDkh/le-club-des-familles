@@ -57,6 +57,7 @@ export default function Home() {
               paragraph={homepageContent?.Concept.ConceptText || ""}
               marginVersion=""
               buttonVersion={true}
+              linkUrl="/places"
             />
           }
 

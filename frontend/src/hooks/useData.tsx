@@ -284,11 +284,7 @@ export const useLogoData = () => {
       try {
         const LogoContentData = await fetchLogo();
 
-        console.log("LogoContentData", LogoContentData);
-
         const content = LogoContentData.data;
-
-        console.log("content", content);
 
         setLogoContent(content);
       } catch (error) {

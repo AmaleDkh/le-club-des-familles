@@ -15,6 +15,7 @@ interface ImageAndTextSectionProps {
   image: string;
   marginVersion: string;
   buttonVersion: boolean;
+  linkUrl: string;
 }
 
 function ImageAndTextSection({
@@ -23,6 +24,7 @@ function ImageAndTextSection({
   image,
   marginVersion,
   buttonVersion,
+  linkUrl,
 }: ImageAndTextSectionProps) {
   const baseUrl = apiStrapiUrl || "";
 
@@ -49,7 +51,10 @@ function ImageAndTextSection({
             dangerouslySetInnerHTML={{ __html: paragraph }}
           />
           {buttonVersion === true && (
-            <Button text="Découvrez tous les lieux family-friendly" link="" />
+            <Button
+              text="Découvrez tous les lieux family-friendly"
+              link={linkUrl}
+            />
           )}
         </div>
       </div>
