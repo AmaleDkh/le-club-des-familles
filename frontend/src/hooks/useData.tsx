@@ -5,8 +5,9 @@ import { useEffect, useState } from "react";
 
 // API Calls
 import {
-  fetchHomepageContent,
   fetchLogo,
+  fetchSocialMediaLinks,
+  fetchHomepageContent,
   fetchAboutpageContent,
   fetchFinderspageContent,
 } from "@/utils/api";
@@ -174,6 +175,10 @@ type LogoContent = {
   Logo: ImageData;
 };
 
+type SocialMediaLinksContent = {
+  Instagram: string;
+};
+
 type HomeContent = {
   HeroBanner: HeroBanner;
   ThreeKeyFigures: ThreeKeyFigures;
@@ -298,4 +303,29 @@ export const useLogoData = () => {
   }, []);
 
   return logoContent;
+};
+
+export const useSocialMediaLinksData = () => {
+  const [socialMediaLinksContent, setSocialMediaLinksContent] =
+    useState<SocialMediaLinksContent | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const SocialMediaLinksContentData = await fetchSocialMediaLinks();
+
+        const content = SocialMediaLinksContentData.data;
+
+        setSocialMediaLinksContent(content);
+      } catch (error) {
+        console.error(
+          "Une erreur est survenue lors de la récupération de la section",
+          error
+        );
+      }
+    };
+    fetchData();
+  }, []);
+
+  return socialMediaLinksContent;
 };

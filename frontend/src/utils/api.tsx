@@ -129,6 +129,26 @@ export const fetchLogo = async () => {
   }
 };
 
+// Get social media links
+export const fetchSocialMediaLinks = async () => {
+  try {
+    const response = await fetch(`${apiStrapiUrl}/api/social-media-link?`);
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de la requête GET de la page");
+    }
+
+    const page = await response.json();
+
+    console.log("page", page);
+
+    return page;
+  } catch (error) {
+    console.error("Erreur lors de la récupération de la page", error);
+    throw error;
+  }
+};
+
 // Get Airtable data
 export const fetchAirtableData = async () => {
   try {

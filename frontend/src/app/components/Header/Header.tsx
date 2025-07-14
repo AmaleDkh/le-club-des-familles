@@ -13,7 +13,11 @@ import Logo from "../Logo/Logo";
 // Style
 import "./Header.scss";
 
-function Header() {
+interface HeaderProps {
+  instagramLink: string;
+}
+
+function Header({ instagramLink }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -89,7 +93,7 @@ function Header() {
 
         <Button
           text="@LECLUBDESFAMILLES"
-          link="/contact"
+          link={instagramLink}
           marginAutoVersion=""
           marginTopVersion=""
         />
