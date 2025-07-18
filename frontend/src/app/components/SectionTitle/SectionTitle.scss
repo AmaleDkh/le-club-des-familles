@@ -1,12 +1,36 @@
+@use "../../assets/style/mixins/breakpoints.scss";
+
 .section-title {
   text-align: start;
-  margin: 0 0 2.5rem 0;
-
-  &--version-with-white-color {
-    color: white;
-  }
 
   &--version-with-text-align {
     text-align: center;
   }
+
+  @include breakpoints.respond-to-medium {
+    text-align: start;
+  }
+
+  &__title {
+    &--version-with-white-color {
+      color: white;
+    }
+  }
+
+  &__paragraph {
+    margin: 0 0 32px 0;
+  }
 }
+
+// .section-title {
+//   text-align: start;
+//   // margin: 0 0 2.5rem 0;
+
+//   &--version-with-white-color {
+//     color: white;
+//   }
+
+//   &--version-with-text-align {
+//     text-align: center;
+//   }
+// }

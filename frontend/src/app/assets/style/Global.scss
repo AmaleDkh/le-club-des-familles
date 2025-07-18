@@ -40,9 +40,9 @@ h2 {
   font-size: 56px;
   margin: 0 0 24px 0;
 
-  // @include breakpoints.respond-to-medium {
-  //   font-size: 2rem;
-  // }
+  @include breakpoints.respond-to-medium {
+    font-size: 40px;
+  }
 }
 
 h3 {
@@ -50,8 +50,7 @@ h3 {
   font-size: 48px;
   margin: 0 0 16px 0;
 
-  // @include breakpoints.respond-to-medium {
-  //   font-size: 24px;
-  //   margin: 0 0 16px 0;
-  // }
+  @include breakpoints.respond-to-medium {
+    font-size: 32px;
+  }
 }

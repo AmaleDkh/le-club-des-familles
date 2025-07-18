@@ -1,57 +1,238 @@
 @use "../../assets/style/mixins/breakpoints.scss";
 @use "../../assets/style/Colors.scss" as colors;
 
-.badge-section {
-  background-color: colors.$orange-color;
-  padding: 4rem 104px;
+.badges-section {
+  display: flex;
+  flex-direction: column;
+  margin: 112px 104px;
 
   @include breakpoints.respond-to-extra-large {
-    padding: 4rem 40px;
+    margin: 64px 40px;
   }
 
   @include breakpoints.respond-to-medium {
-    padding: 2rem 16px;
+    margin: 48px 16px;
   }
 
-  &__container {
-    max-width: 1200px;
-    margin: 0;
+  &__content {
+    align-self: stretch;
+  }
 
-    &__grid {
+  &__list-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // padding-bottom: 14px;
+    gap: 48px;
+  }
+
+  &__list {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    // gap: 12px;
+    gap: 40px;
+
+    @include breakpoints.respond-to-extra-large {
       display: grid;
-      gap: 2rem;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-      @include breakpoints.respond-to-extra-large {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      @include breakpoints.respond-to-medium {
-        grid-template-columns: repeat(1, 1fr);
-      }
+    @include breakpoints.respond-to-medium {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // gap: 32px;
     }
   }
 
-  &__card {
-    background-color: white;
-    border-radius: 1rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    padding: 2rem 1.5rem;
+  &__item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: translateY(-5px);
-    }
-
-    &__image {
-      margin-bottom: 1rem;
-    }
   }
 
-  &__card-title {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-    color: black;
+  &__image {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 32px;
+    // object-fit: fill;
   }
 }
+
+// .badges-section {
+//   display: flex;
+//   flex-direction: column;
+//   margin: 112px 104px;
+
+//   @include breakpoints.respond-to-extra-large {
+//     margin: 80px 60px;
+//   }
+
+//   @include breakpoints.respond-to-medium {
+//     margin: 40px 24px;
+//   }
+
+//   &__content {
+//     align-self: stretch;
+//   }
+
+//   &__list-container {
+//     align-self: stretch;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     padding-bottom: 14px;
+//     gap: 47px;
+
+//     @include breakpoints.respond-to-extra-large {
+//       gap: 35px;
+//     }
+
+//     @include breakpoints.respond-to-medium {
+//       gap: 24px;
+//     }
+//   }
+
+//   &__list {
+//     align-self: stretch;
+//     display: flex;
+//     align-items: flex-start;
+//     gap: 40px;
+
+//     @include breakpoints.respond-to-extra-large {
+//       display: grid;
+//       grid-template-columns: repeat(2, 1fr);
+//       gap: 30px;
+//     }
+
+//     @include breakpoints.respond-to-medium {
+//       display: flex;
+//       flex-direction: column;
+//       grid-template-columns: 1fr;
+//       gap: 32px;
+//     }
+//   }
+
+//   &__item {
+//     flex: 1;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     text-align: center;
+
+//     @include breakpoints.respond-to-medium {
+//       width: 100%;
+//       flex: none;
+//     }
+
+//     &-title {
+//       font-size: 1.5rem;
+//       font-weight: 600;
+//       margin-bottom: 16px;
+//       color: #1f2937;
+
+//       @include breakpoints.respond-to-extra-large {
+//         font-size: 1.375rem;
+//         margin-bottom: 14px;
+//       }
+
+//       @include breakpoints.respond-to-medium {
+//         font-size: 1.25rem;
+//         margin-bottom: 12px;
+//       }
+//     }
+
+//     &-description {
+//       font-size: 1rem;
+//       line-height: 1.6;
+//       color: #6b7280;
+//       margin: 0;
+
+//       @include breakpoints.respond-to-extra-large {
+//         font-size: 0.95rem;
+//       }
+
+//       @include breakpoints.respond-to-medium {
+//         font-size: 0.9rem;
+//       }
+//     }
+//   }
+
+//   &__image {
+//     width: 200px;
+//     height: 200px;
+//     margin-bottom: 32px;
+//     object-fit: cover;
+
+//     @include breakpoints.respond-to-extra-large {
+//       width: 160px;
+//       height: 160px;
+//       margin-bottom: 24px;
+//     }
+
+//     @include breakpoints.respond-to-medium {
+//       width: 140px;
+//       height: 140px;
+//       margin-bottom: 20px;
+//     }
+//   }
+// }
+
+// .badge-section {
+//   background-color: colors.$orange-color;
+//   padding: 4rem 104px;
+
+//   @include breakpoints.respond-to-extra-large {
+//     padding: 4rem 40px;
+//   }
+
+//   @include breakpoints.respond-to-medium {
+//     padding: 2rem 16px;
+//   }
+
+//   &__container {
+//     max-width: 1200px;
+//     margin: 0;
+
+//     &__grid {
+//       display: grid;
+//       gap: 2rem;
+//       grid-template-columns: repeat(4, 1fr);
+
+//       @include breakpoints.respond-to-extra-large {
+//         grid-template-columns: repeat(2, 1fr);
+//       }
+
+//       @include breakpoints.respond-to-medium {
+//         grid-template-columns: repeat(1, 1fr);
+//       }
+//     }
+//   }
+
+//   &__card {
+//     background-color: white;
+//     border-radius: 1rem;
+//     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+//     padding: 2rem 1.5rem;
+//     text-align: center;
+//     transition: transform 0.3s ease;
+
+//     &:hover {
+//       transform: translateY(-5px);
+//     }
+
+//     &__image {
+//       margin-bottom: 1rem;
+//     }
+//   }
+
+//   &__card-title {
+//     font-size: 1.25rem;
+//     margin-bottom: 0.5rem;
+//     color: black;
+//   }
+// }

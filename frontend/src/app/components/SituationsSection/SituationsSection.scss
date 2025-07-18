@@ -20,7 +20,8 @@
     gap: 80px;
 
     @include breakpoints.respond-to-extra-large {
-      flex-direction: column;
+      // flex-direction: column;
+      flex-direction: column-reverse;
       gap: 64px;
     }
 

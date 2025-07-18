@@ -1,4 +1,4 @@
-// Next element
+// Next elements
 import Image from "next/image";
 import { StaticImageData } from "next/image";
 
