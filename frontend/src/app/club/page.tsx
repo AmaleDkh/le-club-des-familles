@@ -17,10 +17,7 @@ function JoinTheClubPage() {
 
   return (
     <Layout>
-      <PageTitle
-        title="REJOIGNEZ L’AVENTURE DU CLUB DES FAMILLES"
-        paragraph=""
-      />
+      <PageTitle title="REJOIGNEZ L’AVENTURE" paragraph="Lorem ipsum" />
 
       <JoinTheClub
         title={homepageContent?.JoinTheClub?.SectionTitle || ""}

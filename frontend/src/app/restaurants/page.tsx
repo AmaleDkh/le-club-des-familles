@@ -19,8 +19,8 @@ function RestaurantOwnersPage() {
   return (
     <Layout>
       <PageTitle
-        title="REJOIGNEZ LE CLUB EN TANT QUE DÉNICHEUR.SE"
-        paragraph=""
+        title="REJOIGNEZ LE CLUB EN TANT QUE LIEU-PARTENAIRE"
+        paragraph="Lorem ipsum"
       />
 
       <TwoSameImagesAndTextSection

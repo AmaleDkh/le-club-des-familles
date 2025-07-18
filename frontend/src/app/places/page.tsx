@@ -8,8 +8,7 @@ import BadgesSection from "../components/BadgesSection/BadgesSection";
 import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
 import ReviewsSection from "../components/ReviewsSection/ReviewsSection";
-import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
-import ContactForm from "../components/ContactForm/ContactForm";
+// import ImageSeparator from "../components/ImageSeparator/ImageSeparator";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hook
@@ -20,7 +19,7 @@ function PlacesPage() {
 
   return (
     <Layout>
-      <PageTitle title="Tous les lieux" paragraph="" />
+      <PageTitle title="Tous les lieux" paragraph="Lorem ipsum" />
 
       <AllThePlaces />
 
@@ -47,10 +46,10 @@ function PlacesPage() {
 
       <ReviewsSection title={homepageContent?.Reviews.SectionTitle || ""} />
 
-      <ImageSeparator
+      {/* <ImageSeparator
         imageUrl={homepageContent?.ImageSeparator?.[0].ImageSeparator.url || ""}
         imageAlt=""
-      />
+      /> */}
 
       <JoinTheClub
         title={homepageContent?.JoinTheClub?.SectionTitle || ""}
@@ -63,8 +62,6 @@ function PlacesPage() {
         partnerTitle={homepageContent?.JoinTheClub?.PartnerTitle || ""}
         partnerText={homepageContent?.JoinTheClub?.PartnerText || ""}
       />
-
-      <ContactForm />
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>

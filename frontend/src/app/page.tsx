@@ -7,13 +7,15 @@ import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
 import IssuesSection from "./components/IssuesSection/IssuesSection";
 import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
 import BadgesSection from "./components/BadgesSection/BadgesSection";
-import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
-import JoinTheClub from "./components/JoinTheClub/JoinTheClub";
+// import FavoriteLocations from "./components/FavoriteLocations/FavoriteLocations";
 import ReviewsSection from "./components/ReviewsSection/ReviewsSection";
 import ImageSeparator from "./components/ImageSeparator/ImageSeparator";
-import ContactForm from "./components/ContactForm/ContactForm";
+import SituationsSection from "./components/SituationsSection/SituationsSection";
+
 // import InstagramFeed from "./components/InstagramFeed/InstagramFeed";
 // import TextImageSection from "./components/TextImageSection/TextImageSection";
+
+import Test from "../app/assets/Test.jpg";
 
 // Hook
 import { useHomepageData } from "@/hooks/useData";
@@ -31,6 +33,8 @@ export default function Home() {
         />
 
         <ThreeKeyFigures />
+
+        <SituationsSection image={Test} />
 
         <>
           <IssuesSection
@@ -82,34 +86,19 @@ export default function Home() {
             imageAlt=""
           />
 
-          <FavoriteLocations
+          {/* <FavoriteLocations
             title={homepageContent?.FavoriteLocations.SectionTitle || ""}
             buttonVersion={true}
-          />
+          /> */}
 
           <ReviewsSection title={homepageContent?.Reviews.SectionTitle || ""} />
 
-          <ImageSeparator
+          {/* <ImageSeparator
             imageUrl={
               homepageContent?.ImageSeparator?.[1].ImageSeparator.url || ""
             }
             imageAlt=""
-          />
-
-          <JoinTheClub
-            title={homepageContent?.JoinTheClub?.SectionTitle || ""}
-            diggerImage={homepageContent?.JoinTheClub?.DiggerImage.url || ""}
-            diggerTitle={homepageContent?.JoinTheClub?.DiggerTitle || ""}
-            diggerText={homepageContent?.JoinTheClub?.DiggerText || ""}
-            partnerImage={
-              homepageContent?.JoinTheClub?.PartnerImage.formats.medium?.url ||
-              ""
-            }
-            partnerTitle={homepageContent?.JoinTheClub?.PartnerTitle || ""}
-            partnerText={homepageContent?.JoinTheClub?.PartnerText || ""}
-          />
-
-          <ContactForm />
+          /> */}
 
           {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
         </>

@@ -37,7 +37,7 @@ function HeroBanner({ title, subtitle, photo }: BannerProps) {
         <h1 className="hero-banner__title">{title}</h1>
         <p className="hero-banner__subtitle">{subtitle}</p>
         <Button
-          text="DÉCOUVREZ TOUS LES LIEUX"
+          text="Découvrez tous les lieux"
           link="/places"
           marginAutoVersion=""
           marginTopVersion=""

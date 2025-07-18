@@ -91,17 +91,40 @@ function ContactForm({
     setStatus({ type: "loading", message: "Envoi en cours..." });
 
     try {
-      const response = await fetch("", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          ...formData,
-          to: emailTo,
-          subject: `Nouveau message de ${formData.prenom} ${formData.nom}`,
-        }),
-      });
+      // const response = await fetch(
+      //   "http://amale.manachem.fr/api/contact/send",
+      //   {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //     },
+
+      //     body: JSON.stringify({
+      //       // to: emailTo,
+      //       subject: `Nouveau message de ${formData.prenom} ${formData.nom}`,
+      //       message: formData.message,
+      //       emailaddress: formData.email,
+      //     }),
+      //   }
+      // );
+      const response = await fetch(
+        "https://amale.manachem.fr/api/contact-messages",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            data: {
+              emailAddress: formData.email,
+              subject: `Nouveau message de ${formData.prenom} ${formData.nom}`,
+              message: formData.message,
+              // prenom: formData.prenom,
+              // nom: formData.nom,
+            },
+          }),
+        }
+      );
 
       if (response.ok) {
         setStatus({

@@ -125,8 +125,8 @@ function FavoriteLocations({
 
       {buttonVersion === true && (
         <Button
-          text="DÉCOUVREZ TOUS LES LIEUX"
-          link="/lieux"
+          text="Découvrez tous les lieux"
+          link="/places"
           marginAutoVersion="button--center-version"
           marginTopVersion="button--margin-top-version"
         />

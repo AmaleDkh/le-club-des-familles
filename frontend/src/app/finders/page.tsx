@@ -20,7 +20,7 @@ function FindersPage() {
     <Layout>
       <PageTitle
         title="REJOIGNEZ LE CLUB EN TANT QUE DÉNICHEUR.SE"
-        paragraph=""
+        paragraph="Lorem ipsum"
       />
 
       <TwoSameImagesAndTextSection

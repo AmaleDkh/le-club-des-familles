@@ -42,7 +42,7 @@ function Header({ instagramLink }: HeaderProps) {
 
           <Button
             text="@LECLUBDESFAMILLES"
-            link="/contact"
+            link={instagramLink}
             marginAutoVersion=""
             marginTopVersion=""
           />

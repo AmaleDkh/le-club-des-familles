@@ -13,6 +13,7 @@ import { useSocialMediaLinksData } from "@/hooks/useData";
 
 function Layout({ children }: LayoutProps) {
   const socialMediaLinksContent = useSocialMediaLinksData();
+  console.log("socialMediaLinksContent", socialMediaLinksContent?.Instagram);
 
   return (
     <>
