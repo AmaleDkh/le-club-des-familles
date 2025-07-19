@@ -4,21 +4,29 @@
 import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
-import BadgesSection from "../components/BadgesSection/BadgesSection";
-import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
-import ContactForm from "../components/ContactForm/ContactForm";
+// import BadgesSection from "../components/BadgesSection/BadgesSection";
+// import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
+import ReviewsSection from "../components/ReviewsSection/ReviewsSection";
+// import ContactForm from "../components/ContactForm/ContactForm";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hook
-import { useHomepageData } from "@/hooks/useData";
+// import { useHomepageData } from "@/hooks/useData";
+
+import Test from "../../app/assets/Test.jpg";
 
 function JoinTheClubPage() {
-  const homepageContent = useHomepageData();
+  // const homepageContent = useHomepageData();
 
   return (
     <Layout>
       <PageTitle title="REJOIGNEZ L’AVENTURE" paragraph="Lorem ipsum" />
 
+      <JoinTheClub />
+
+      <ReviewsSection image={Test} />
+
+      {/* 
       <JoinTheClub
         title={homepageContent?.JoinTheClub?.SectionTitle || ""}
         diggerImage={homepageContent?.JoinTheClub?.DiggerImage.url || ""}
@@ -29,9 +37,9 @@ function JoinTheClubPage() {
         }
         partnerTitle={homepageContent?.JoinTheClub?.PartnerTitle || ""}
         partnerText={homepageContent?.JoinTheClub?.PartnerText || ""}
-      />
+      /> */}
 
-      <BadgesSection
+      {/* <BadgesSection
         title={homepageContent?.Badges.SectionTitle || ""}
         firstBadgeImage={homepageContent?.Badges.FirstBadgeImage.url || ""}
         firstBadgeTitle={homepageContent?.Badges.FirstBadgeTitle || ""}
@@ -45,14 +53,14 @@ function JoinTheClubPage() {
         fourthBadgeImage={homepageContent?.Badges.FourthBadgeImage.url || ""}
         fourthBadgeTitle={homepageContent?.Badges.FourthBadgeTitle || ""}
         fourthBadgeParagraph={homepageContent?.Badges.FourthBadgeText || ""}
-      />
+      /> */}
 
-      <FavoriteLocations
+      {/* <FavoriteLocations
         title={homepageContent?.FavoriteLocations.SectionTitle || ""}
         buttonVersion={true}
-      />
+      /> */}
 
-      <ContactForm />
+      {/* <ContactForm /> */}
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>

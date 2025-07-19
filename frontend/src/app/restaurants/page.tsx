@@ -3,18 +3,21 @@
 // Components
 import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
-import TwoSameImagesAndTextSection from "../components/TwoSameImagesAndTextSection/TwoSameImagesAndTextSection";
+// import TwoSameImagesAndTextSection from "../components/TwoSameImagesAndTextSection/TwoSameImagesAndTextSection";
 import ReviewsSection from "../components/ReviewsSection/ReviewsSection";
-import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
-import ContactForm from "../components/ContactForm/ContactForm";
+// import FavoriteLocations from "../components/FavoriteLocations/FavoriteLocations";
+// import ContactForm from "../components/ContactForm/ContactForm";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
+import ImageAndTextSection from "../components/ImageAndTextSection/ImageAndTextSection";
 
 // Hooks
-import { useHomepageData, useFinderspageData } from "@/hooks/useData";
+// import { useHomepageData, useFinderspageData } from "@/hooks/useData";
+
+import Test from "../../app/assets/Test.jpg";
 
 function RestaurantOwnersPage() {
-  const homepageContent = useHomepageData();
-  const finderspageContent = useFinderspageData();
+  // const homepageContent = useHomepageData();
+  // const finderspageContent = useFinderspageData();
 
   return (
     <Layout>
@@ -23,7 +26,11 @@ function RestaurantOwnersPage() {
         paragraph="Lorem ipsum"
       />
 
-      <TwoSameImagesAndTextSection
+      <ImageAndTextSection title="Le rôle de partenaire" image={Test} />
+
+      <ReviewsSection image={Test} />
+
+      {/* <TwoSameImagesAndTextSection
         title={
           finderspageContent?.TwoSameImagesAndTextSection.SectionTitle || ""
         }
@@ -36,16 +43,18 @@ function RestaurantOwnersPage() {
         rightImageUrl={
           finderspageContent?.TwoSameImagesAndTextSection.SecondImage.url || ""
         }
-      />
+      /> */}
 
-      <ReviewsSection title={homepageContent?.Reviews.SectionTitle || ""} />
+      {/* <ReviewsSection image={,} /> */}
 
-      <FavoriteLocations
+      {/* <ReviewsSection title={homepageContent?.Reviews.SectionTitle || ""} /> */}
+
+      {/* <FavoriteLocations
         title={homepageContent?.FavoriteLocations.SectionTitle || ""}
         buttonVersion={true}
-      />
+      /> */}
 
-      <ContactForm />
+      {/* <ContactForm /> */}
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>

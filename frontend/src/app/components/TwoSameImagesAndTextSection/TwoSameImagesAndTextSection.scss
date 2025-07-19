@@ -4,15 +4,14 @@
 .two-same-images-and-text-section {
   position: relative;
   overflow: hidden;
-
-  padding: 4rem 104px;
+  margin: 112px 104px;
 
   @include breakpoints.respond-to-extra-large {
-    padding: 4rem 40px;
+    margin: 64px 40px;
   }
 
   @include breakpoints.respond-to-medium {
-    padding: 2rem 16px;
+    margin: 48px 16px;
   }
 
   &__container {
@@ -48,10 +47,10 @@
   }
 
   &__image-wrapper {
-    // border-radius: 1rem;
     overflow: hidden;
-    // box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    height: 400px;
+    width: 300px;
+    height: 500px;
+    // height: 400px;
 
     &--left {
       margin-top: 2rem;

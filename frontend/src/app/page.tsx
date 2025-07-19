@@ -4,7 +4,7 @@
 import Layout from "./components/Layout/Layout";
 import HeroBanner from "./components/HeroBanner/HeroBanner";
 import ThreeKeyFigures from "./components/ThreeKeyFigures/ThreeKeyFigures";
-import IssuesSection from "./components/IssuesSection/IssuesSection";
+// import IssuesSection from "./components/IssuesSection/IssuesSection";
 import ImageAndTextSection from "./components/ImageAndTextSection/ImageAndTextSection";
 import BadgesSection from "./components/BadgesSection/BadgesSection";
 import SituationsSection from "./components/SituationsSection/SituationsSection";
@@ -13,14 +13,15 @@ import ReviewsSection from "./components/ReviewsSection/ReviewsSection";
 // import ImageSeparator from "./components/ImageSeparator/ImageSeparator";
 // import InstagramFeed from "./components/InstagramFeed/InstagramFeed";
 // import TextImageSection from "./components/TextImageSection/TextImageSection";
+import CtaSection from "./components/CtaSection/CtaSection";
 
 import Test from "../app/assets/Test.jpg";
 
 // Hook
-import { useHomepageData } from "@/hooks/useData";
+// import { useHomepageData } from "@/hooks/useData";
 
 export default function Home() {
-  const homepageContent = useHomepageData();
+  // const homepageContent = useHomepageData();
 
   return (
     <>
@@ -38,7 +39,11 @@ export default function Home() {
 
         <SituationsSection image={Test} />
 
-        <ImageAndTextSection image={Test} />
+        <ImageAndTextSection
+          title="Alors, on mange où avec les enfants ?"
+          image={Test}
+          withButton={true}
+        />
 
         <BadgesSection
           firstBadgeImage={Test}
@@ -48,6 +53,8 @@ export default function Home() {
         />
 
         <ReviewsSection image={Test} />
+
+        <CtaSection image={Test} />
 
         <>
           {/* <IssuesSection

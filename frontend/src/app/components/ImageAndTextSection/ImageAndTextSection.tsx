@@ -12,30 +12,36 @@ import Button from "../Button/Button";
 import "./ImageAndTextSection.scss";
 
 interface ImageAndTextSectionProps {
-  // title: string;
+  title: string;
   // paragraph: string;
   image: StaticImageData;
   // marginVersion: string;
   // buttonVersion: boolean;
   // linkUrl: string;
+  withButton?: boolean;
 }
 
-function ImageAndTextSection({ image }: ImageAndTextSectionProps) {
+function ImageAndTextSection({
+  title,
+  image,
+  withButton,
+}: ImageAndTextSectionProps) {
   return (
     <section className="image-and-text-section">
       <div className="image-and-text-section__scroll-view">
         <div className="image-and-text-section__row-view">
           <Image src={image} alt="" className="image-and-text-section__image" />
           <div className="image-and-text-section__column">
-            <SectionTitle title="Alors, on mange où avec les enfants ?" />
-
+            <SectionTitle title={title} />
             <span className="image-and-text-section__text">
               {
                 "Tu as déjà vécu une de ces situations au restaurant ? Enfant affamé, couche qui déborde... Nous aussi ! \n\nC’est pour toutes ces raisons que nous avons créé le Club des Familles, pour te proposer des lieux testés et approuvés en famille pour que ces moments soient le plus agréables possibles."
               }
             </span>
 
-            <Button text="Découvrez tous les lieux" link="/places" />
+            {withButton && (
+              <Button text="Découvrez tous les lieux" link="/places" />
+            )}
           </div>
         </div>
       </div>

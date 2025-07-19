@@ -3,25 +3,41 @@
 // Components
 import Layout from "../components/Layout/Layout";
 import PageTitle from "../components/PageTitle/PageTitle";
-import BadgesSection from "../components/BadgesSection/BadgesSection";
+// import BadgesSection from "../components/BadgesSection/BadgesSection";
 import JoinTheClub from "../components/JoinTheClub/JoinTheClub";
 import TeamSection from "../components/TeamSection/TeamSection";
 import ContentSections from "../components/ContentSections/ContentSections";
-import ContactForm from "../components/ContactForm/ContactForm";
+import ReviewsSection from "../components/ReviewsSection/ReviewsSection";
+// import ContactForm from "../components/ContactForm/ContactForm";
 // import InstagramFeed from "../components/InstagramFeed/InstagramFeed";
 
 // Hooks
-import { useHomepageData, useAboutpageData } from "@/hooks/useData";
+// import { useHomepageData, useAboutpageData } from "@/hooks/useData";
+
+import Test from "../../app/assets/Test.jpg";
 
 function AboutPage() {
-  const homepageContent = useHomepageData();
-  const aboutpageContent = useAboutpageData();
+  // const homepageContent = useHomepageData();
+  // const aboutpageContent = useAboutpageData();
 
   return (
     <Layout>
       <PageTitle title="LE CLUB DES FAMILLES, C’EST QUOI ?" paragraph="" />
 
       <ContentSections
+        firstImage={Test}
+        secondImage={Test}
+        thirdImage={Test}
+        fourthImage={Test}
+      />
+
+      <TeamSection />
+
+      <ReviewsSection image={Test} />
+
+      <JoinTheClub />
+
+      {/* <ContentSections
         firstTitle={aboutpageContent?.ImagesAndContentSection.FirstTitle || ""}
         firstParagraph={
           aboutpageContent?.ImagesAndContentSection.FirstParagraph || ""
@@ -52,11 +68,18 @@ function AboutPage() {
         fourthImage={
           aboutpageContent?.ImagesAndContentSection.FourthImage.url || ""
         }
-      />
+      /> */}
 
-      <TeamSection title={aboutpageContent?.TeamSection.SectionTitle || ""} />
+      {/* <TeamSection title={aboutpageContent?.TeamSection.SectionTitle || ""} /> */}
 
-      <BadgesSection
+      {/* <BadgesSection
+        firstBadgeImage={Test}
+        secondBadgeImage={Test}
+        thirdBadgeImage={Test}
+        fourthBadgeImage={Test}
+      /> */}
+
+      {/* <BadgesSection
         title={homepageContent?.Badges.SectionTitle || ""}
         firstBadgeImage={homepageContent?.Badges.FirstBadgeImage.url || ""}
         firstBadgeTitle={homepageContent?.Badges.FirstBadgeTitle || ""}
@@ -70,9 +93,9 @@ function AboutPage() {
         fourthBadgeImage={homepageContent?.Badges.FourthBadgeImage.url || ""}
         fourthBadgeTitle={homepageContent?.Badges.FourthBadgeTitle || ""}
         fourthBadgeParagraph={homepageContent?.Badges.FourthBadgeText || ""}
-      />
+      /> */}
 
-      <JoinTheClub
+      {/* <JoinTheClub
         title={homepageContent?.JoinTheClub?.SectionTitle || ""}
         diggerImage={homepageContent?.JoinTheClub?.DiggerImage.url || ""}
         diggerTitle={homepageContent?.JoinTheClub?.DiggerTitle || ""}
@@ -82,9 +105,9 @@ function AboutPage() {
         }
         partnerTitle={homepageContent?.JoinTheClub?.PartnerTitle || ""}
         partnerText={homepageContent?.JoinTheClub?.PartnerText || ""}
-      />
+      /> */}
 
-      <ContactForm />
+      {/* <ContactForm /> */}
 
       {/* <InstagramFeed paddingTopVersion="instagram-feed--no-padding-top-version" /> */}
     </Layout>
