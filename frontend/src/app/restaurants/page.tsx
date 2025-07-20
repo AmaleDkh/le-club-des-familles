@@ -22,11 +22,18 @@ function RestaurantOwnersPage() {
   return (
     <Layout>
       <PageTitle
-        title="REJOIGNEZ LE CLUB EN TANT QUE LIEU-PARTENAIRE"
-        paragraph="Lorem ipsum"
+        title="Deviens partenaire pour du club"
+        paragraph="Vous aimez accueillir les familles ?
+Vous avez une chaise haute, un menu enfant, ou simplement le sens de l’accueil ?
+Rejoignez le Club en tant que partenaire et rendez votre lieu visible auprès d’une communauté de parents en quête de chouettes adresses."
       />
 
-      <ImageAndTextSection title="Le rôle de partenaire" image={Test} />
+      <ImageAndTextSection
+        title="Le rôle de partenaire"
+        paragraph=""
+        text=""
+        image={Test}
+      />
 
       <ReviewsSection image={Test} />
 

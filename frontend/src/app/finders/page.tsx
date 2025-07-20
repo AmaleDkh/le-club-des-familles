@@ -22,11 +22,16 @@ function FindersPage() {
   return (
     <Layout>
       <PageTitle
-        title="REJOIGNEZ LE CLUB EN TANT QUE DÉNICHEUR.SE"
-        paragraph="Lorem ipsum"
+        title="Deviens dénicheur·se pour le club"
+        paragraph="Tu aimes partager tes bonnes adresses ? Tu repères les chaises hautes comme personne ? Rejoins le Club en tant que dénicheur·se et aide d’autres familles à vivre des sorties plus simples et plus chouettes."
       />
 
-      <ImageAndTextSection title="Le rôle de dénicheur.se" image={Test} />
+      <ImageAndTextSection
+        title="Le rôle de dénicheur.se"
+        paragraph=""
+        text=""
+        image={Test}
+      />
 
       <ReviewsSection image={Test} />
 

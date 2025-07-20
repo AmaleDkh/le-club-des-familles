@@ -8,9 +8,17 @@
   --font-lato: "Lato", sans-serif;
 }
 
+body {
+  margin: 0;
+}
+
 * {
   font-family: var(--font-lato);
   font-weight: 300;
+
+  @include breakpoints.respond-to-medium {
+    font-size: 14px;
+  }
 }
 
 h1,
@@ -27,9 +35,9 @@ h1 {
   font-size: 80px;
   margin: 0;
 
-  @include breakpoints.respond-to-extra-large {
-    font-size: 64px;
-  }
+  // @include breakpoints.respond-to-extra-large {
+  //   font-size: 64px;
+  // }
 
   @include breakpoints.respond-to-medium {
     font-size: 48px;
@@ -41,7 +49,8 @@ h2 {
   margin: 0 0 24px 0;
 
   @include breakpoints.respond-to-medium {
-    font-size: 40px;
+    // font-size: 40px;
+    font-size: 32px;
   }
 }
 
@@ -51,6 +60,7 @@ h3 {
   margin: 0 0 16px 0;
 
   @include breakpoints.respond-to-medium {
-    font-size: 32px;
+    // font-size: 32px;
+    font-size: 24px;
   }
 }

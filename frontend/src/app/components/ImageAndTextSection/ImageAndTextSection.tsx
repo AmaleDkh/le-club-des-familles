@@ -14,6 +14,7 @@ import "./ImageAndTextSection.scss";
 interface ImageAndTextSectionProps {
   title: string;
   paragraph: string;
+  text: string;
   image: StaticImageData;
   // marginVersion: string;
   // buttonVersion: boolean;
@@ -24,6 +25,7 @@ interface ImageAndTextSectionProps {
 function ImageAndTextSection({
   title,
   paragraph,
+  text,
   image,
   withButton,
 }: ImageAndTextSectionProps) {
@@ -33,8 +35,8 @@ function ImageAndTextSection({
         <div className="image-and-text-section__row-view">
           <Image src={image} alt="" className="image-and-text-section__image" />
           <div className="image-and-text-section__column">
-            <SectionTitle title={title} />
-            <span className="image-and-text-section__text">{paragraph}</span>
+            <SectionTitle title={title} paragraph={paragraph} />
+            <p className="image-and-text-section__text">{text}</p>
 
             {withButton && (
               <Button text="Découvrez tous les lieux" link="/places" />

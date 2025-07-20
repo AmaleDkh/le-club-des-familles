@@ -29,8 +29,9 @@
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include breakpoints.respond-to-medium {
+    @include breakpoints.respond-to-small {
       grid-template-columns: 1fr;
+      gap: 32px;
     }
   }
 
@@ -43,19 +44,23 @@
 
   &__review-text {
     margin-bottom: 32px;
-    margin-left: 32px;
+    // margin-left: 32px;
     margin-right: 32px;
 
     @include breakpoints.respond-to-medium {
       margin-left: 0;
       margin-right: 0;
     }
+
+    @include breakpoints.respond-to-small {
+      margin-bottom: 24px;
+    }
   }
 
   &__review-author {
     display: flex;
     align-items: center;
-    margin-left: 32px;
+    // margin-left: 32px;
     gap: 16px;
 
     @include breakpoints.respond-to-medium {
@@ -86,8 +91,6 @@
   display: flex;
   gap: 4px;
   margin-bottom: 32px;
-  margin-left: 32px;
-  // object-fit: fill;
 
   .star-icon {
     width: 24px;
@@ -102,6 +105,10 @@
 
   @include breakpoints.respond-to-medium {
     margin-left: 0;
+  }
+
+  @include breakpoints.respond-to-small {
+    margin-bottom: 24px;
   }
 }
 

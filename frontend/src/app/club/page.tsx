@@ -20,7 +20,10 @@ function JoinTheClubPage() {
 
   return (
     <Layout>
-      <PageTitle title="REJOIGNEZ L’AVENTURE" paragraph="Lorem ipsum" />
+      <PageTitle
+        title="REJOIGNEZ L’AVENTURE"
+        paragraph="Et si on réinventait ensemble les sorties en famille ?"
+      />
 
       <JoinTheClub />
 

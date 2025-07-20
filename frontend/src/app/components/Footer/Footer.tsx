@@ -2,6 +2,8 @@
 // import Logo from "../Logo/Logo";
 // import NavigationMenu from "../NavigationMenu/NavigationMenu";
 
+import Link from "next/link";
+
 // Style
 import "./Footer.scss";
 
@@ -22,20 +24,30 @@ function Footer() {
             alt="Logo"
           /> */}
           <div className="footer__nav-links">
-            <span className="footer__nav-link">{"Les lieux"}</span>
-            <span className="footer__nav-link">{"Rejoindre le club"}</span>
-            <span className="footer__nav-link">{"Le concept"}</span>
+            <Link href="/places" className="footer__nav-link">
+              {"Les lieux"}
+            </Link>
+            <Link href="/club" className="footer__nav-link">
+              {"Rejoindre le club"}
+            </Link>
+            <Link href="/about" className="footer__nav-link">
+              {"Le concept"}
+            </Link>
           </div>
         </div>
         <div className="footer__bottom">
           <span className="footer__copyright">
             © {new Date().getFullYear()} Relume. All right reserved.
           </span>
-          <span className="footer__link">{"Privacy Policy"}</span>
-          <span className="footer__link">{"Terms of Service"}</span>
-          <span className="footer__link footer__link--last">
+          <Link href="/" className="footer__link">
+            {"Privacy Policy"}
+          </Link>
+          <Link href="/" className="footer__link">
+            {"Terms of Service"}
+          </Link>
+          <Link href="/" className="footer__link footer__link--last">
             {"Cookies Settings"}
-          </span>
+          </Link>
         </div>
       </div>
     </footer>

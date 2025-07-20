@@ -22,7 +22,10 @@ function AboutPage() {
 
   return (
     <Layout>
-      <PageTitle title="LE CLUB DES FAMILLES, C’EST QUOI ?" paragraph="" />
+      <PageTitle
+        title="LE CLUB DES FAMILLES, C’EST QUOI ?"
+        paragraph="Parce qu’on en avait assez de galérer à chaque sortie avec nos enfants."
+      />
 
       <ContentSections
         firstImage={Test}

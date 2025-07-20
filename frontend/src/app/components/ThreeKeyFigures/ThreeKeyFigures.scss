@@ -33,7 +33,7 @@
     // margin-right: 104px;
     gap: 12px;
 
-    @include breakpoints.respond-to-medium {
+    @include breakpoints.respond-to-small {
       flex-direction: column;
       justify-content: center;
       align-items: center;

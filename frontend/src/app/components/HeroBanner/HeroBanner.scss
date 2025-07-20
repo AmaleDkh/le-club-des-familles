@@ -27,6 +27,10 @@
     flex-direction: column;
     align-items: center;
     gap: 24px;
+
+    @include breakpoints.respond-to-medium {
+      margin-bottom: 40px;
+    }
   }
 
   &__text-group {

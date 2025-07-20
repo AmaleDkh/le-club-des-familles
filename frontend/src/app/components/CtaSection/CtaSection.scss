@@ -25,9 +25,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // margin: 112px 325px 80px 325px;
     margin-bottom: 80px;
-    // gap: 24px;
+
+    @include breakpoints.respond-to-medium {
+      margin-bottom: 40px;
+    }
   }
 
   &__image {
