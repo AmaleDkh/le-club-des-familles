@@ -45,7 +45,7 @@ function JoinTheClub() {
               <SecondaryButton
                 link="/finders"
                 label="Rejoindre le club"
-                centerVersion=""
+                // centerVersion=""
               />
             </div>
           </div>
@@ -63,7 +63,7 @@ function JoinTheClub() {
               <SecondaryButton
                 link="/restaurants"
                 label="Rejoindre le club"
-                centerVersion=""
+                // centerVersion=""
               />
             </div>
           </div>

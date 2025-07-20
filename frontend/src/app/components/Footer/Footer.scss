@@ -2,50 +2,243 @@
 @use "../../assets/style/Colors.scss" as colors;
 
 .footer {
-  background-color: colors.$orange-color;
-  padding: 8px 104px;
+  display: flex;
+  flex-direction: column;
 
-  @include breakpoints.respond-to-extra-large {
-    padding: 8px 40px;
-  }
+  &__scroll-view {
+    align-self: stretch;
+    background: colors.$orange-color;
+    padding: 80px 104px;
 
-  @include breakpoints.respond-to-medium {
-    padding: 8px 16px;
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-
-    &__main {
-      width: -webkit-fill-available;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      @include breakpoints.respond-to-medium {
-        flex-direction: column;
-        align-items: center;
-        gap: 2.5rem;
-        text-align: center;
-      }
+    @include breakpoints.respond-to-extra-large {
+      padding: 64px 40px;
     }
 
-    &__copyright {
-      color: white;
-      white-space: nowrap;
-      text-align: right;
-      padding: 0;
+    @include breakpoints.respond-to-medium {
+      padding: 48px 16px;
+    }
+  }
 
-      @include breakpoints.respond-to-medium {
-        text-align: center;
-        white-space: normal;
-        max-width: 100%;
-        line-height: 1.5;
-      }
+  &__logo {
+    color: colors.$white-color;
+    font-size: 24px;
+
+    // @include breakpoints.respond-to-extra-large {
+    //   font-size: 20px;
+    // }
+
+    // @include breakpoints.respond-to-medium {
+    //   font-size: 18px;
+    // }
+  }
+
+  &__top {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+
+    @include breakpoints.respond-to-extra-large {
+      margin-bottom: 60px;
+    }
+
+    @include breakpoints.respond-to-medium {
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__nav-links {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    // padding-right: 3px;
+    // gap: 35px;
+    gap: 32px;
+
+    @include breakpoints.respond-to-extra-large {
+      gap: 24px;
+    }
+
+    @include breakpoints.respond-to-medium {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+    }
+  }
+
+  &__nav-link {
+    color: colors.$white-color;
+    // font-size: 16px;
+
+    // @include breakpoints.respond-to-extra-large {
+    //   font-size: 15px;
+    // }
+
+    // @include breakpoints.respond-to-medium {
+    //   font-size: 14px;
+    // }
+  }
+
+  &__bottom {
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+
+    @include breakpoints.respond-to-extra-large {
+      gap: 20px;
+    }
+
+    @include breakpoints.respond-to-medium {
+      flex-direction: column;
+      gap: 16px;
+      text-align: center;
+    }
+  }
+
+  &__copyright {
+    color: colors.$white-color;
+    font-size: 14px;
+
+    // @include breakpoints.respond-to-medium {
+    //   font-size: 13px;
+    // }
+  }
+
+  &__link {
+    color: colors.$white-color;
+    font-size: 14px;
+
+    // @include breakpoints.respond-to-medium {
+    //   font-size: 13px;
+    // }
+
+    &--last {
+      margin-right: 0;
     }
   }
 }
+
+// .footer {
+//   display: flex;
+//   flex-direction: column;
+
+//   &__scroll-view {
+//     align-self: stretch;
+//     background: colors.$orange-color;
+//     padding: 80px 104px;
+
+//     @include breakpoints.respond-to-extra-large {
+//       padding: 64px 40px;
+//     }
+
+//     @include breakpoints.respond-to-medium {
+//       padding: 48px 16px;
+//     }
+//   }
+
+//   &__logo {
+//     color: colors.$white-color;
+//     width: 953px;
+//     height: 72px;
+//     object-fit: fill;
+//   }
+
+//   &__top {
+//     align-self: stretch;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     // margin: 163px 104px 80px 104px;
+//   }
+
+//   &__nav-links {
+//     flex-shrink: 0;
+//     display: flex;
+//     align-items: center;
+//     padding-right: 3px;
+//     gap: 35px;
+//   }
+
+//   &__nav-link {
+//     color: colors.$white-color;
+//   }
+
+//   &__bottom {
+//     align-self: stretch;
+//     display: flex;
+//     align-items: center;
+//     // margin-bottom: 163px;
+//     margin-left: 472px;
+//     margin-right: 472px;
+//   }
+
+//   &__copyright {
+//     color: colors.$white-color;
+//     font-size: 14px;
+//     // margin-right: 27px;
+//   }
+
+//   &__link {
+//     color: colors.$white-color;
+//     font-size: 14px;
+//     // margin-right: 25px;
+
+//     &--last {
+//       margin-right: 0;
+//     }
+//   }
+// }
+
+// .footer {
+//   background-color: colors.$orange-color;
+//   padding: 8px 104px;
+
+//   @include breakpoints.respond-to-extra-large {
+//     padding: 8px 40px;
+//   }
+
+//   @include breakpoints.respond-to-medium {
+//     padding: 8px 16px;
+//   }
+
+//   &__content {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     text-align: left;
+
+//     &__main {
+//       width: -webkit-fill-available;
+//       display: flex;
+//       align-items: center;
+//       justify-content: space-between;
+
+//       @include breakpoints.respond-to-medium {
+//         flex-direction: column;
+//         align-items: center;
+//         gap: 2.5rem;
+//         text-align: center;
+//       }
+//     }
+
+//     &__copyright {
+//       color: white;
+//       white-space: nowrap;
+//       text-align: right;
+//       padding: 0;
+
+//       @include breakpoints.respond-to-medium {
+//         text-align: center;
+//         white-space: normal;
+//         max-width: 100%;
+//         line-height: 1.5;
+//       }
+//     }
+//   }
+// }

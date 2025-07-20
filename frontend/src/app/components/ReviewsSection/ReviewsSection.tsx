@@ -29,7 +29,7 @@ function ReviewsSection({ image }: ReviewsSectionProps) {
       <div className="reviews-section__scroll-view">
         <SectionTitle
           title="L’avis des familles"
-          paragraph="Lorem ipsum"
+          paragraph="Des parents, comme toi, qui ont testé nos lieux et partagent leurs expériences."
           versionWithTextAlign="section-title--version-with-text-align"
         />
         <div className="reviews-section__columns">

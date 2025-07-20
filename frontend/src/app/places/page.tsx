@@ -45,7 +45,8 @@ function PlacesPage() {
       /> */}
 
       <FavoriteLocations
-        title={homepageContent?.FavoriteLocations.SectionTitle || ""}
+        title="Les coups de coeur des familles"
+        // title={homepageContent?.FavoriteLocations.SectionTitle || ""}
         buttonVersion={true}
       />
 

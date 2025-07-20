@@ -13,7 +13,7 @@ import "./ImageAndTextSection.scss";
 
 interface ImageAndTextSectionProps {
   title: string;
-  // paragraph: string;
+  paragraph: string;
   image: StaticImageData;
   // marginVersion: string;
   // buttonVersion: boolean;
@@ -23,6 +23,7 @@ interface ImageAndTextSectionProps {
 
 function ImageAndTextSection({
   title,
+  paragraph,
   image,
   withButton,
 }: ImageAndTextSectionProps) {
@@ -33,11 +34,7 @@ function ImageAndTextSection({
           <Image src={image} alt="" className="image-and-text-section__image" />
           <div className="image-and-text-section__column">
             <SectionTitle title={title} />
-            <span className="image-and-text-section__text">
-              {
-                "Tu as déjà vécu une de ces situations au restaurant ? Enfant affamé, couche qui déborde... Nous aussi ! \n\nC’est pour toutes ces raisons que nous avons créé le Club des Familles, pour te proposer des lieux testés et approuvés en famille pour que ces moments soient le plus agréables possibles."
-              }
-            </span>
+            <span className="image-and-text-section__text">{paragraph}</span>
 
             {withButton && (
               <Button text="Découvrez tous les lieux" link="/places" />

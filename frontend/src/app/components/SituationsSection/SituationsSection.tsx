@@ -15,32 +15,33 @@ function SituationsSection({ image }: SituationsSectionProps) {
       <div className="situations-section__content">
         <div className="situations-section__texts">
           <h2 className="situations-section__title">
-            Tu as déjà vécu une de ces situations ?
+            Tu t’es déjà retrouvé.e dans l’une de ces galères ?
           </h2>
           <p className="situations-section__paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique.
+            On sait à quoi ça ressemble, on est passés par là aussi.
           </p>
 
           <div className="situations-section__situation">
             <h3 className="situations-section__situation__title">Galère #1</h3>
             <p className="situations-section__situation__text">
-              Trouver un restaurant family-friendly un jour de pluie...
+              Il est midi, il pleut, et tu ne trouves aucun resto sympa où ton
+              enfant est le bienvenu...
             </p>
           </div>
 
           <div className="situations-section__situation">
             <h3 className="situations-section__situation__title">Galère #2</h3>
             <p className="situations-section__situation__text">
-              Courir après ton enfant dans un restaurant... et finir par lui
-              donner toute la corbeille de pain !
+              Tu pousses la porte avec la poussette, et tout le monde te regarde
+              comme si t’étais pas au bon endroit...
             </p>
           </div>
 
           <div className="situations-section__situation">
             <h3 className="situations-section__situation__title">Galère #3</h3>
             <p className="situations-section__situation__text">
-              Trouver un restaurant family-friendly un jour de pluie...
+              Ton enfant fait le tour des tables pendant que tu lui balances des
+              morceaux de pain pour gagner 5 minutes de calme…
             </p>
           </div>
         </div>

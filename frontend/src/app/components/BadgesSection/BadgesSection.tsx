@@ -1,4 +1,4 @@
-const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
+// const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
 
 // Next elements
 import Image from "next/image";
@@ -53,7 +53,7 @@ function BadgesSection({
       <div className="badges-section__content">
         <SectionTitle
           title="Un système de badges uniques"
-          paragraph="Lorem ipsum"
+          paragraph="Parce que chaque famille a ses besoins, on a imaginé un système de badges pour t’aider à repérer en un clin d'œil ce que propose chaque lieu."
           versionWithTextAlign="section-title--version-with-text-align"
         />
 
@@ -68,7 +68,7 @@ function BadgesSection({
               <h3 className="badges-section__item-title">{"badges bébé"}</h3>
               <span className="badges-section__item-description">
                 {
-                  "Chaise haute, place pour les poussettes, table à langer et allaitement-friendly"
+                  "Chaise haute, espace pour poussette, table à langer et lieu allaitement-friendly."
                 }
               </span>
             </div>
@@ -81,7 +81,7 @@ function BadgesSection({
               <h3 className="badges-section__item-title">{"badges enfants"}</h3>
               <span className="badges-section__item-description">
                 {
-                  "Menu enfant (avec ou sans légumes), espace de jeu, coloriages, jouets, etc."
+                  "Menu enfant (même avec des légumes), coin jeux, jouets, coloriages et plus encore."
                 }
               </span>
             </div>
@@ -94,7 +94,7 @@ function BadgesSection({
               <h3 className="badges-section__item-title">{"badges adultes"}</h3>
               <span className="badges-section__item-description">
                 {
-                  "Ouverture matinale, organisation d'anniversaires, espace extérieur sécurisé, cocktails sans alcool, etc."
+                  "Ouverture dès le matin, anniversaires organisés, terrasse sécurisée, options sans alcool."
                 }
               </span>
             </div>
@@ -107,7 +107,7 @@ function BadgesSection({
               <h3 className="badges-section__item-title">{"badges valeurs"}</h3>
               <span className="badges-section__item-description">
                 {
-                  "Bio au menu, engagé dans le recyclage, lieu inclusif pour les familles mono-parentales"
+                  "Bio, recyclage, lieu inclusif pour les familles solo ou recomposées."
                 }
               </span>
             </div>

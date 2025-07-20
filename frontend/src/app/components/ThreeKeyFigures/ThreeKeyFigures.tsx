@@ -13,7 +13,7 @@ function ThreeKeyFigures() {
       <div className="statistics-section__intro">
         <SectionTitle
           title="Le club des familles en chiffres"
-          paragraph="Lorem ipsum"
+          paragraph="Une communauté engagée qui grandit… et qui en fait profiter les familles."
           versionWithTextAlign="section-title--version-with-text-align"
         />
       </div>

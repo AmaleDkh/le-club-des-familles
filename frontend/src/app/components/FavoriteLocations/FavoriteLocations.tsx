@@ -50,6 +50,7 @@ function FavoriteLocations({
     <section className="recommended container">
       <SectionTitle
         title={title}
+        paragraph="Lorem ipsum"
         colorVersion=""
         versionWithTextAlign="section-title--version-with-text-align"
       />
@@ -106,7 +107,8 @@ function FavoriteLocations({
                 </div>
 
                 <div className="recommended__content">
-                  <h3 className="recommended__name">{place.fields.Name}</h3>
+                  <span className="recommended__name">{place.fields.Name}</span>
+                  {/* <h3 className="recommended__name">{place.fields.Name}</h3> */}
                   <div className="recommended__location">
                     <MapPin className="recommended__location-icon" />
                     <span>{place.fields.Address}</span>

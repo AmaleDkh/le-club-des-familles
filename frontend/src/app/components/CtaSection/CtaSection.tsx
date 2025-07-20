@@ -18,8 +18,10 @@ function CtaSection({ image }: CtaSectionProps) {
       <div className="cta-section__wrapper">
         <div className="cta-section__content">
           <SectionTitle
-            title="Pour que chaque sortie en famille ne soit que plaisir"
-            paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
+            title="Parce que la famille mérite le meilleur"
+            paragraph="Chaque sortie est une occasion unique de créer des souvenirs. On vous aide à choisir les lieux qui rendent ces moments magiques."
+            // title="Pour que chaque sortie en famille ne soit que plaisir"
+            // paragraph="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique."
             versionWithTextAlign="section-title--version-with-text-align"
           />
 

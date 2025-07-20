@@ -41,6 +41,9 @@ export default function Home() {
 
         <ImageAndTextSection
           title="Alors, on mange où avec les enfants ?"
+          paragraph={
+            "On s’est posé la même question. \n C’est pourquoi on a créé le Club des Familles : une sélection de lieux testés (et approuvés) par des parents, pour des parents. \n Fini les galères, place aux sorties sereines en famille."
+          }
           image={Test}
           withButton={true}
         />
