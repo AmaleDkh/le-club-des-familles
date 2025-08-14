@@ -6,19 +6,33 @@
   --font-gagalin: "Gagalin", sans-serif;
   --font-dreaming: "Dreaming Outloud", sans-serif;
   --font-lato: "Lato", sans-serif;
+
+  --font-light: 300;
+
+  --font-regular: 400;
+
+  --font-bold: 700;
 }
 
 body {
   margin: 0;
+  font-weight: var(--font-regular);
 }
 
 * {
   font-family: var(--font-lato);
-  font-weight: 300;
+  // font-weight: 300;
 
-  @include breakpoints.respond-to-medium {
-    font-size: 14px;
-  }
+  // @include breakpoints.respond-to-medium {
+  //   font-size: 14px;
+  // }
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 86%;
 }
 
 h1,
@@ -26,14 +40,13 @@ h2 {
   font-family: var(--font-gagalin);
 }
 
-h2,
-h3 {
-  color: colors.$orange-color;
-}
+// h2,
+// h3 {
+//   color: colors.$orange-color;
+// }
 
 h1 {
   font-size: 80px;
-  margin: 0;
 
   // @include breakpoints.respond-to-extra-large {
   //   font-size: 64px;
@@ -45,19 +58,22 @@ h1 {
 }
 
 h2 {
-  font-size: 56px;
-  margin: 0 0 24px 0;
+  // font-size: 56px;
+  font-size: 64px;
 
   @include breakpoints.respond-to-medium {
-    // font-size: 40px;
-    font-size: 32px;
+    font-size: 48px;
   }
+
+  // @include breakpoints.respond-to-medium {
+  //   // font-size: 40px;
+  //   font-size: 32px;
+  // }
 }
 
 h3 {
   font-family: var(--font-dreaming);
   font-size: 48px;
-  margin: 0 0 16px 0;
 
   @include breakpoints.respond-to-medium {
     // font-size: 32px;

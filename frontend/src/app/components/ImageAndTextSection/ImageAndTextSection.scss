@@ -22,17 +22,18 @@
     align-self: stretch;
     display: flex;
     align-items: center;
-    gap: 80px;
+    // gap: 80px;
+    gap: 40px;
 
     @include breakpoints.respond-to-extra-large {
       flex-direction: column-reverse;
       align-items: start;
-      gap: 64px;
+      // gap: 64px;
     }
 
-    @include breakpoints.respond-to-large {
-      gap: 40px;
-    }
+    // @include breakpoints.respond-to-large {
+    //   gap: 40px;
+    // }
   }
 
   &__image {
@@ -59,10 +60,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 32px;
   }
 
   &__text {
-    margin: 0 0 24px 0;
+    // margin: 0 0 24px 0;
+    margin: 0;
     // margin-bottom: 24px;
     white-space: pre-line;
   }

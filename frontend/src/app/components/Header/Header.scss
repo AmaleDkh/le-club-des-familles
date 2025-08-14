@@ -2,20 +2,27 @@
 @use "../../assets/style/Colors.scss" as colors;
 
 .header {
-  background-color: colors.$orange-color;
-  color: white;
-  padding: 8px 104px;
+  // background-color: colors.$orange-color;
+  background-color: colors.$yellow-color;
+  color: black;
+  // color: white;
+  padding: 40px 104px;
   // position: fixed;
   // top: 0;
   // z-index: 1000;
   width: -webkit-fill-available;
 
   @include breakpoints.respond-to-extra-large {
-    padding: 8px 40px;
+    padding: 40px;
   }
 
   @include breakpoints.respond-to-medium {
-    padding: 8px 16px;
+    padding: 16px;
+  }
+
+  &__logo {
+    font-family: var(--font-gagalin);
+    font-size: 24px;
   }
 
   &__nav {
@@ -39,7 +46,8 @@
       display: none;
       background: none;
       border: none;
-      color: white;
+      // color: white;
+      color: black;
       cursor: pointer;
       padding: 0;
     }
@@ -47,7 +55,8 @@
     &__mobile-menu {
       position: fixed;
       inset: 0;
-      background-color: colors.$orange-color;
+      // background-color: colors.$orange-color;
+      background-color: colors.$yellow-color;
       z-index: 50;
       display: flex;
       flex-direction: column;
@@ -71,7 +80,8 @@
         padding: 0;
         background: none;
         border: none;
-        color: white;
+        // color: white;
+        color: black;
         cursor: pointer;
       }
 

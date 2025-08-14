@@ -14,11 +14,15 @@ type ButtonProps = {
 
 function Button({ text, link }: ButtonProps) {
   return (
-    <div className="button-wrapper">
-      <Link href={link} className="button-wrapper__button">
-        <span className="button-wrapper__button__button-text">{text}</span>
-      </Link>
-    </div>
+    <Link href={link} className="button-wrapper__button">
+      <span className="button-wrapper__button__button-text">{text}</span>
+    </Link>
+
+    // <div className="button-wrapper">
+    //   <Link href={link} className="button-wrapper__button">
+    //     <span className="button-wrapper__button__button-text">{text}</span>
+    //   </Link>
+    // </div>
   );
 }
 

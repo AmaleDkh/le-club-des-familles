@@ -1,4 +1,4 @@
-// const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
+const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
 
 // Next elements
 import Image from "next/image";
@@ -13,10 +13,15 @@ import "./HeroBanner.scss";
 interface BannerProps {
   // title: string;
   // subtitle: string;
-  image: StaticImageData;
+  // image: StaticImageData;
+  image: string;
 }
 
 function HeroBanner({ image }: BannerProps) {
+  const baseUrl = apiStrapiUrl || "";
+
+  const imageUrl = baseUrl + image;
+
   return (
     <div className="hero-banner">
       <div className="hero-banner__scroll-view">
@@ -34,7 +39,16 @@ function HeroBanner({ image }: BannerProps) {
           <Button text="Découvrez tous les lieux" link="/places" />
         </div>
 
-        <Image src={image} className="hero-banner__image" alt="" />
+        {/* <Image src={image} className="hero-banner__image" alt="" /> */}
+        {imageUrl ? (
+          <Image
+            src={imageUrl}
+            alt=""
+            className="hero-banner__image"
+            width={1920}
+            height={1000}
+          />
+        ) : null}
       </div>
     </div>
   );

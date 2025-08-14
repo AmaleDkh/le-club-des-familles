@@ -1,23 +1,22 @@
 @use "../../assets/style/mixins/breakpoints.scss";
 
 .page-title {
-  padding: 112px 104px;
   text-align: center;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding: 112px 104px;
 
   @include breakpoints.respond-to-extra-large {
-    // padding: 4rem 40px 0 40px;
     padding: 64px 40px;
   }
 
   @include breakpoints.respond-to-medium {
-    // padding: 2rem 16px 0 16px;
     padding: 48px 16px;
   }
 
   &__paragraph {
     margin: 0;
+    font-size: 24px;
   }
 }

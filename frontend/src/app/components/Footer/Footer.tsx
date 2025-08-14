@@ -15,7 +15,8 @@ function Footer() {
     <footer className="footer">
       <div className="footer__scroll-view">
         <div className="footer__top">
-          <span className="footer__logo">Logo</span>
+          {/* <span className="footer__logo">Logo</span> */}
+          <div className="header__logo">LE CLUB DES FAMILLES</div>
           {/* <img
             src={
               "https://storage.googleapis.com/tagjs-prod.appspot.com/v1/X2sQiWzEvr/u7nqckva_expires_30_days.png"

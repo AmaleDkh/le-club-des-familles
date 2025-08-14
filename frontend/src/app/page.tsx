@@ -18,10 +18,11 @@ import CtaSection from "./components/CtaSection/CtaSection";
 import Test from "../app/assets/Test.jpg";
 
 // Hook
-// import { useHomepageData } from "@/hooks/useData";
+import { useHomepageData } from "@/hooks/useData";
 
 export default function Home() {
-  // const homepageContent = useHomepageData();
+  const homepageContent = useHomepageData();
+  console.log("homepageContent", homepageContent);
 
   return (
     <>
@@ -32,7 +33,8 @@ export default function Home() {
           // photo={homepageContent?.HeroBanner.Image.url || ""}
           // title=""
           // subtitle=""
-          image={Test}
+          // image={Test}s
+          image={homepageContent?.HeroBanner.Image.url || ""}
         />
 
         <ThreeKeyFigures />

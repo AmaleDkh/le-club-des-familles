@@ -3,7 +3,9 @@
 
 .all-the-places {
   min-height: 100vh;
-  background-color: colors.$orange-color;
+  // background-color: colors.$orange-color;
+  background-color: colors.$yellow-color;
+  color: black;
   padding: 112px 104px;
 
   @include breakpoints.respond-to-extra-large {
@@ -18,15 +20,18 @@
   &__main {
     max-width: 1400px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
-  &__search {
-    margin-bottom: 80px;
+  // &__search {
+  //   margin-bottom: 80px;
 
-    @include breakpoints.respond-to-medium {
-      margin-bottom: 40px;
-    }
-  }
+  //   @include breakpoints.respond-to-medium {
+  //     margin-bottom: 40px;
+  //   }
+  // }
 
   &__search-container {
     position: relative;
@@ -63,13 +68,13 @@
     }
   }
 
-  &__filters {
-    margin-bottom: 80px;
+  // &__filters {
+  //   margin-bottom: 80px;
 
-    @include breakpoints.respond-to-medium {
-      margin-bottom: 40px;
-    }
-  }
+  //   @include breakpoints.respond-to-medium {
+  //     margin-bottom: 40px;
+  //   }
+  // }
 
   &__active-filters {
     display: flex;
@@ -84,7 +89,7 @@
     gap: 0.5rem;
     padding: 0.5rem 1rem;
     border-radius: 25px;
-    background-color: white;
+    // background-color: white;
     color: colors.$black-color;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -185,7 +190,7 @@
     min-width: 200px;
     margin-top: 0.5rem;
     border: none;
-    border-radius: 12px;
+    // border-radius: 12px;
     background-color: white;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     max-height: 15rem;
@@ -234,17 +239,15 @@
     text-align: center;
   }
 
-  &__results-count {
-    margin-bottom: 2rem;
-  }
-
   &__results-text {
-    color: white;
-    margin-bottom: 80px;
+    color: black;
+    margin: 0;
+    // color: white;
+    // margin-bottom: 80px;
 
-    @include breakpoints.respond-to-medium {
-      margin-bottom: 40px;
-    }
+    // @include breakpoints.respond-to-medium {
+    //   margin-bottom: 40px;
+    // }
   }
 
   &__grid {
@@ -293,33 +296,37 @@
   &__mobile-carousel-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 16px;
+    margin-bottom: 16px;
   }
 
   &__mobile-nav {
     flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: white;
-    border: 2px solid colors.$orange-color;
-    color: colors.$orange-color;
+    // width: 48px;
+    // height: 48px;
+    // border-radius: 50%;
+    // background-color: white;
+    // border: 2px solid colors.$orange-color;
+    // color: colors.$orange-color;
+    background-color: colors.$orange-color;
+    border: none;
+    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 0;
 
     &:hover:not(:disabled) {
-      background-color: colors.$orange-color;
+      // background-color: colors.$orange-color;
       color: white;
       transform: scale(1.05);
     }
 
     &:disabled {
-      opacity: 0.5;
+      // opacity: 0.5;
       cursor: not-allowed;
       transform: none;
     }
@@ -344,9 +351,13 @@
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
-    .all-the-places__card-image-wrapper {
-      height: 320px;
+    @include breakpoints.respond-to-small {
+      height: auto;
     }
+
+    // .all-the-places__card-image-wrapper {
+    //   height: 320px;
+    // }
 
     .all-the-places__card-content {
       padding: 1.5rem;
@@ -354,6 +365,7 @@
 
     .all-the-places__card-title {
       // margin-bottom: 1rem;
+      font-size: 16px;
       margin-bottom: 16px;
     }
 
@@ -398,16 +410,18 @@
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    height: 512px;
+    // height: 512px;
+    height: 400px;
 
     &:hover {
       // transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     }
 
-    @include breakpoints.respond-to-medium {
-      height: 400px;
-    }
+    // @include breakpoints.respond-to-small {
+    //   height: 400px;
+    //   // height: auto;
+    // }
   }
 
   &__card-image-wrapper {
@@ -448,6 +462,7 @@
   &__image-indicator {
     width: 8px;
     height: 8px;
+    display: inline-block;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.6);
     border: none;
@@ -489,19 +504,19 @@
     padding: 24px;
 
     @include breakpoints.respond-to-medium {
-      padding: 1.25rem;
+      padding: 16px;
     }
 
-    @include breakpoints.respond-to-small {
-      padding: 1.5rem;
-    }
+    // @include breakpoints.respond-to-small {
+    //   padding: 1.5rem;
+    // }
   }
 
   &__card-title {
     display: block;
     font-family: var(--font-dreaming);
-    // font-size: 24px;
-    font-size: 16px;
+    font-size: 24px;
+    // font-size: 16px;
     color: colors.$orange-color;
     // margin-bottom: 24px;
     margin-bottom: 16px;
@@ -603,13 +618,13 @@
       transform: translateY(-50%) scale(1.1);
     }
 
-    &--prev {
-      left: 12px;
-    }
+    // &--prev {
+    //   left: 12px;
+    // }
 
-    &--next {
-      right: 12px;
-    }
+    // &--next {
+    //   right: 12px;
+    // }
   }
 
   &__empty {
@@ -637,15 +652,15 @@
 
   &__loading-content {
     text-align: center;
-    padding: 3rem;
-    background-color: white;
-    border-radius: 16px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    // padding: 3rem;
+    // background-color: white;
+    // border-radius: 16px;
+    // box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
     p {
-      color: colors.$orange-color;
-
-      font-weight: 600;
+      // color: colors.$orange-color;s
+      color: colors.$white-color;
+      // font-weight: 600;
       margin: 0;
     }
   }
@@ -759,6 +774,11 @@
     }
   }
 }
+
+// .lucide-chevron-left,
+// .lucide-chevron-right {
+//   background-color: colors.$orange-color;
+// }
 
 // @use "../../assets/style/mixins/breakpoints.scss";
 // @use "../../assets/style/Colors.scss" as colors;

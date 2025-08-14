@@ -26,21 +26,27 @@ function JoinTheClub() {
       <div className="join-the-club__content">
         <SectionTitle
           title="REJOINDRE LE CLUB"
-          paragraph="Lorem ipsum"
+          paragraph="Construisons ensemble un monde plus kids-friendly."
           versionWithTextAlign="section-title--version-with-text-align"
         />
 
         <div className="join-the-club__cards">
           <div className="join-the-club__card">
-            <img src="" className="join-the-club__image" alt="Dénicheur.se" />
+            <img
+              src="Test"
+              className="join-the-club__image"
+              alt="Dénicheur.se"
+            />
             <div className="join-the-club__card-content">
-              <h3 className="join-the-club__card-title">
-                En tant que dénicheur.se
-              </h3>
-              <span className="join-the-club__card-text">
-                Tu aimes dénicher ou tester des lieux ? <br />
-                Tu as envie de promouvoir les actions du Club des Familles ?
-              </span>
+              <div className="join-the-club__card-content__content">
+                <h3 className="join-the-club__card-title">
+                  En tant que dénicheur.se
+                </h3>
+                <span className="join-the-club__card-text">
+                  Tu aimes dénicher ou tester des lieux ? <br />
+                  Tu as envie de promouvoir les actions du Club des Familles ?
+                </span>
+              </div>
 
               <SecondaryButton
                 link="/finders"
@@ -53,13 +59,16 @@ function JoinTheClub() {
           <div className="join-the-club__card">
             <img src="" className="join-the-club__image" alt="Dénicheur.se" />
             <div className="join-the-club__card-content">
-              <h3 className="join-the-club__card-title">
-                En tant que partenaire
-              </h3>
-              <span className="join-the-club__card-text">
-                Tu souhaites mettre en avant ton lieu family-friendly auprès de
-                notre communauté ?
-              </span>
+              <div className="join-the-club__card-content__content">
+                <h3 className="join-the-club__card-title">
+                  En tant que partenaire
+                </h3>
+                <span className="join-the-club__card-text">
+                  Tu souhaites mettre en avant ton lieu family-friendly auprès
+                  de notre communauté ?
+                </span>
+              </div>
+
               <SecondaryButton
                 link="/restaurants"
                 label="Rejoindre le club"

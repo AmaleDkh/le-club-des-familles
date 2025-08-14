@@ -2,14 +2,18 @@
 
 .section-title {
   text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  // text-align: center;
 
-  &--version-with-text-align {
-    text-align: center;
-  }
+  // &--version-with-text-align {
+  //   text-align: center;
+  // }
 
-  @include breakpoints.respond-to-medium {
-    text-align: start;
-  }
+  // @include breakpoints.respond-to-medium {
+  //   text-align: start;
+  // }
 
   &__title {
     &--version-with-white-color {
@@ -18,7 +22,9 @@
   }
 
   &__paragraph {
-    margin: 0 0 32px 0;
+    // margin: 0 0 32px 0;
+    margin: 0;
+    font-size: 24px;
   }
 }
 

@@ -23,7 +23,7 @@ function TeamSection() {
     <section className="team-section">
       <SectionTitle
         title="La famille derrière le club"
-        paragraph="Lorem ipsum"
+        paragraph="On a créé ce qu’on aurait aimé trouver."
         versionWithTextAlign="section-title--version-with-text-align"
       />
       <div className="team-section__members">

@@ -6,11 +6,18 @@
   flex-direction: column;
 
   &__scroll-view {
+    display: flex;
     align-self: stretch;
-    background: colors.$orange-color;
+    // background: colors.$orange-color;
+    background-color: colors.$yellow-color;
+    color: black;
     padding: 80px 104px;
+    flex-direction: column;
+    gap: 40px;
 
     @include breakpoints.respond-to-extra-large {
+      flex-direction: column;
+      gap: 40px;
       padding: 64px 40px;
     }
 
@@ -20,7 +27,7 @@
   }
 
   &__logo {
-    color: colors.$white-color;
+    // color: colors.$white-color;
     font-size: 24px;
 
     // @include breakpoints.respond-to-extra-large {
@@ -37,16 +44,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 80px;
+    // margin-bottom: 40px;
+    // margin-bottom: 80px;
 
-    @include breakpoints.respond-to-extra-large {
-      margin-bottom: 60px;
-    }
+    // @include breakpoints.respond-to-extra-large {
+    //   margin-bottom: 60px;
+    // }
 
     @include breakpoints.respond-to-medium {
       flex-direction: column;
       gap: 32px;
-      margin-bottom: 40px;
+      // margin-bottom: 40px;
     }
   }
 
@@ -56,21 +64,22 @@
     align-items: center;
     // padding-right: 3px;
     // gap: 35px;
-    gap: 32px;
+    gap: 16px;
 
-    @include breakpoints.respond-to-extra-large {
-      gap: 24px;
-    }
+    // @include breakpoints.respond-to-extra-large {
+    //   gap: 24px;
+    // }
 
     @include breakpoints.respond-to-medium {
       flex-direction: column;
-      gap: 20px;
+      // gap: 20px;
       text-align: center;
     }
   }
 
   &__nav-link {
-    color: colors.$white-color;
+    // color: colors.$white-color;
+    color: black;
     text-decoration: none;
     // font-size: 16px;
 
@@ -102,7 +111,7 @@
   }
 
   &__copyright {
-    color: colors.$white-color;
+    // color: colors.$white-color;
     font-size: 14px;
 
     // @include breakpoints.respond-to-medium {
@@ -111,7 +120,8 @@
   }
 
   &__link {
-    color: colors.$white-color;
+    // color: colors.$white-color;
+    color: black;
     font-size: 14px;
     text-decoration: none;
 

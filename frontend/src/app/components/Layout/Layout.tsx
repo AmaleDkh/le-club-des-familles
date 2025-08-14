@@ -9,15 +9,18 @@ interface LayoutProps {
   children: ReactNode;
 }
 
-import { useSocialMediaLinksData } from "@/hooks/useData";
+// import { useSocialMediaLinksData } from "@/hooks/useData";
 
 function Layout({ children }: LayoutProps) {
-  const socialMediaLinksContent = useSocialMediaLinksData();
-  console.log("socialMediaLinksContent", socialMediaLinksContent?.Instagram);
+  // const socialMediaLinksContent = useSocialMediaLinksData();
+  // console.log("socialMediaLinksContent", socialMediaLinksContent?.Instagram);
 
   return (
     <>
-      <Header instagramLink={socialMediaLinksContent?.Instagram || ""} />
+      <Header
+        instagramLink={""}
+        // instagramLink={socialMediaLinksContent?.Instagram || ""}
+      />
       <main>{children}</main>
       <Footer />
     </>

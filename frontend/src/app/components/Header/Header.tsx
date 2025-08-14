@@ -27,7 +27,8 @@ function Header({ instagramLink }: HeaderProps) {
   return (
     <header className="header">
       <nav className="header__nav">
-        <Logo />
+        {/* <Logo /> */}
+        <div className="header__logo">LE CLUB DES FAMILLES</div>
 
         <div className="header__nav__desktop-menu">
           <Link href="/places" className="header__nav__desktop-menu__link">

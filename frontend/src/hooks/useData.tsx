@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 // API Calls
 import {
   fetchLogo,
-  fetchSocialMediaLinks,
+  // fetchSocialMediaLinks,
   fetchHomepageContent,
   fetchAboutpageContent,
   fetchFinderspageContent,
@@ -305,27 +305,27 @@ export const useLogoData = () => {
   return logoContent;
 };
 
-export const useSocialMediaLinksData = () => {
-  const [socialMediaLinksContent, setSocialMediaLinksContent] =
-    useState<SocialMediaLinksContent | null>(null);
+// export const useSocialMediaLinksData = () => {
+//   const [socialMediaLinksContent, setSocialMediaLinksContent] =
+//     useState<SocialMediaLinksContent | null>(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const SocialMediaLinksContentData = await fetchSocialMediaLinks();
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const SocialMediaLinksContentData = await fetchSocialMediaLinks();
 
-        const content = SocialMediaLinksContentData.data;
+//         const content = SocialMediaLinksContentData.data;
 
-        setSocialMediaLinksContent(content);
-      } catch (error) {
-        console.error(
-          "Une erreur est survenue lors de la récupération de la section",
-          error
-        );
-      }
-    };
-    fetchData();
-  }, []);
+//         setSocialMediaLinksContent(content);
+//       } catch (error) {
+//         console.error(
+//           "Une erreur est survenue lors de la récupération de la section",
+//           error
+//         );
+//       }
+//     };
+//     fetchData();
+//   }, []);
 
-  return socialMediaLinksContent;
-};
+//   return socialMediaLinksContent;
+// };

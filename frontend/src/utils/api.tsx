@@ -14,29 +14,57 @@ const airTableValueBadgesName =
 const apiStrapiUrl = process.env.NEXT_PUBLIC_API_STRAPI_URL;
 
 // Get homepage content
+// export const fetchHomepageContent = async () => {
+//   try {
+//     const response = await fetch(
+//       `${apiStrapiUrl}/api/homepage?` +
+//         `populate[HeroBanner][populate][Image]=true&` +
+//         `populate[ThreeKeyFigures]=true&` +
+//         `populate[JoinTheClub][populate][DiggerImage]=true&` +
+//         `populate[JoinTheClub][populate][PartnerImage]=true&` +
+//         `populate[Issues]=true&` +
+//         `populate[Concept][populate][ConceptImage]=true&` +
+//         `populate[Badges][populate][FirstBadgeImage]=true&` +
+//         `populate[Badges][populate][SecondBadgeImage]=true&` +
+//         `populate[Badges][populate][ThirdBadgeImage]=true&` +
+//         `populate[Badges][populate][FourthBadgeImage]=true&` +
+//         `populate[FavoriteLocations]=true&` +
+//         `populate[Reviews][populate][FirstReviewerPhoto]=true&` +
+//         `populate[Reviews][populate][SecondReviewerPhoto]=true&` +
+//         `populate[Reviews][populate][ThirdReviewerPhoto]=true&` +
+//         `populate[Reviews][populate][FourthReviewerPhoto]=true&` +
+//         `populate[Reviews][populate][FifthReviewerPhoto]=true&` +
+//         `populate[Reviews][populate][SixthReviewerPhoto]=true&` +
+//         `populate[ImageSeparator][populate][ImageSeparator]=true`
+//     );
+
+//     if (!response.ok) {
+//       throw new Error("Erreur lors de la requête GET de la page");
+//     }
+
+//     const page = await response.json();
+
+//     // console.log("page", page);
+
+//     return page;
+//   } catch (error) {
+//     console.error("Erreur lors de la récupération de la page", error);
+//     throw error;
+//   }
+// };
+
 export const fetchHomepageContent = async () => {
   try {
+    // const response = await fetch(
+    //   `${apiStrapiUrl}/api/homepage?` +
+    //     `populate[HeroBanner]populate=HeroBannerImage`
+    // );
+
     const response = await fetch(
-      `${apiStrapiUrl}/api/homepage?` +
-        `populate[HeroBanner][populate][Image]=true&` +
-        `populate[ThreeKeyFigures]=true&` +
-        `populate[JoinTheClub][populate][DiggerImage]=true&` +
-        `populate[JoinTheClub][populate][PartnerImage]=true&` +
-        `populate[Issues]=true&` +
-        `populate[Concept][populate][ConceptImage]=true&` +
-        `populate[Badges][populate][FirstBadgeImage]=true&` +
-        `populate[Badges][populate][SecondBadgeImage]=true&` +
-        `populate[Badges][populate][ThirdBadgeImage]=true&` +
-        `populate[Badges][populate][FourthBadgeImage]=true&` +
-        `populate[FavoriteLocations]=true&` +
-        `populate[Reviews][populate][FirstReviewerPhoto]=true&` +
-        `populate[Reviews][populate][SecondReviewerPhoto]=true&` +
-        `populate[Reviews][populate][ThirdReviewerPhoto]=true&` +
-        `populate[Reviews][populate][FourthReviewerPhoto]=true&` +
-        `populate[Reviews][populate][FifthReviewerPhoto]=true&` +
-        `populate[Reviews][populate][SixthReviewerPhoto]=true&` +
-        `populate[ImageSeparator][populate][ImageSeparator]=true`
+      `${apiStrapiUrl}/api/homepage?populate[HeroBanner][populate]=Image`
     );
+
+    console.log("response", response);
 
     if (!response.ok) {
       throw new Error("Erreur lors de la requête GET de la page");
@@ -130,24 +158,24 @@ export const fetchLogo = async () => {
 };
 
 // Get social media links
-export const fetchSocialMediaLinks = async () => {
-  try {
-    const response = await fetch(`${apiStrapiUrl}/api/social-media-link?`);
+// export const fetchSocialMediaLinks = async () => {
+//   try {
+//     const response = await fetch(`${apiStrapiUrl}/api/social-media-link?`);
 
-    if (!response.ok) {
-      throw new Error("Erreur lors de la requête GET de la page");
-    }
+//     if (!response.ok) {
+//       throw new Error("Erreur lors de la requête GET de la page");
+//     }
 
-    const page = await response.json();
+//     const page = await response.json();
 
-    console.log("page", page);
+//     console.log("page", page);
 
-    return page;
-  } catch (error) {
-    console.error("Erreur lors de la récupération de la page", error);
-    throw error;
-  }
-};
+//     return page;
+//   } catch (error) {
+//     console.error("Erreur lors de la récupération de la page", error);
+//     throw error;
+//   }
+// };
 
 // Get Airtable data
 export const fetchAirtableData = async () => {

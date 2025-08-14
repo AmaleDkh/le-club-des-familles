@@ -4,6 +4,7 @@
 .reviews-section {
   display: flex;
   flex-direction: column;
+
   margin: 112px 104px;
 
   @include breakpoints.respond-to-extra-large {
@@ -12,6 +13,12 @@
 
   @include breakpoints.respond-to-medium {
     margin: 48px 16px;
+  }
+
+  &__scroll-view {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
   }
 
   &__columns {
@@ -40,21 +47,23 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
   }
 
   &__review-text {
-    margin-bottom: 32px;
+    // margin-bottom: 32px;
     // margin-left: 32px;
-    margin-right: 32px;
+    // margin-right: 32px;
+    font-style: italic;
 
     @include breakpoints.respond-to-medium {
       margin-left: 0;
       margin-right: 0;
     }
 
-    @include breakpoints.respond-to-small {
-      margin-bottom: 24px;
-    }
+    // @include breakpoints.respond-to-small {
+    //   margin-bottom: 24px;
+    // }
   }
 
   &__review-author {
@@ -90,7 +99,7 @@
 .rating-stars {
   display: flex;
   gap: 4px;
-  margin-bottom: 32px;
+  // margin-bottom: 32px;
 
   .star-icon {
     width: 24px;
